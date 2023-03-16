@@ -7,9 +7,9 @@ int main(int ac, char **str)
 		while (*str[1])
 		{
 			while (std::islower(*str[1]))
-				*str[1] -= 32;
+				*str[1] = std::toupper(*str[1]);
 			std::cout << *str[1];
-			char c = *str[1]++;
+			str[1]++;
 		}
 		std::cout << std::endl;
 		return 0;
