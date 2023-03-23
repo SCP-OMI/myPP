@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/23 07:16:47 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/03/23 07:16:48 by mcharouh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 #include<iostream>
+#include <iomanip>
 
 void AddContact(Contacts& contact) {
     std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
@@ -18,7 +31,14 @@ void AddContact(Contacts& contact) {
     std::cout << "DarkestSecret: ";
     std::getline(std::cin, darkestSecret);
     contact.setDarkestSecret(darkestSecret);
-}
+};
+
+void SearchContact(){
+    std::cout << std::setw(10) << "Index |";
+    std::cout << std::setw(10) << "FirstName |";
+    std::cout << std::setw(10) << "LastName |";
+    std::cout << std::setw(10) << "NickName |";
+};
 
 
 
@@ -34,7 +54,7 @@ int main()
         AddContact(contacts);
     }
 	else if (command == "SEARCH"){
-		goto error;
+		SearchContact();
 	}
 	else if (command == "EXIT"){
 		goto error;

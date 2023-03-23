@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/23 07:16:36 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/03/23 07:19:11 by mcharouh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONE_BOOK_H
 #define PHONE_BOOK_H
 
@@ -25,12 +37,10 @@ public:
     std::string getDarkestSecret() const;
 };
 
-class Phonebook {
 
-	private :
-		Contacts[8];
-	public :
-		
-}
+class Phonebook {
+    private:
+        Contacts contacts[8];
+};
 
 #endif
