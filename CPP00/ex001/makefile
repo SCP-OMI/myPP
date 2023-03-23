@@ -1,6 +1,6 @@
 NAME	= phonebook
 
-SRC		= phonebook.cpp getters.cpp 
+SRC		= contacts.cpp main.cpp 
 
 OBJ		= ${SRC:.cpp=.o}
 

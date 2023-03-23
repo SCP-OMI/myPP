@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 07:16:47 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/23 08:14:25 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/23 08:21:48 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include<iostream>
 #include <iomanip>
 
-void AddContact(Phonebook *phonebook) {
+void AddContact(Contacts& contact) {
     
-    Contacts contact;
+    //Contacts contact;
     std::string input;
     /* Get-Set FirstName */
     std::cout << "FirstName: ";
@@ -62,7 +62,8 @@ int main()
         std::cout << "Please enter the command you want to perform: ";
         std::getline(std::cin, command);
         if (command == "ADD")
-            AddContact(contacts);
+            goto error;
+            //AddContact(contacts);
         else if (command == "SEARCH")
             SearchContact();
         else if (command == "EXIT")

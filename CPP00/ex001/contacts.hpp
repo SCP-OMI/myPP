@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contacts.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 07:16:36 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/23 09:35:42 by mcharouh         ###   ########.fr       */
+/*   Created: 2023/03/23 08:38:53 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/03/23 09:24:45 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-#define PHONE_BOOK_HPP
+#ifndef CONTACTS_H
+#define CONTACTS_H
 
 #include<iostream>
+#include <iomanip>
 
-class Contacts {
-private:
-    std::string FirstName;
-    std::string LastName;
-    std::string NickName;
-    std::string PhoneNumber;
-    std::string DarkestSecret;
-public:
-    Contacts(){}; /*Constructor*/
-    ~Contacts(){}; /*Disctructor*/
-    /* Setters */
+class Contacts{
+	private :
+		std::string FirstName;
+		std::string LastName;
+		std::string NickName;
+		std::string PhoneNumber;
+		std::string DarkestSecret;
+	public :
+		Contacts(){}
+		~Contacts(){}
+	 /* Setters */
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);
     void setNickName(const std::string& nickName);
@@ -37,21 +38,9 @@ public:
     std::string getNickName() const;
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
-};
 
-
-class Phonebook {
-    public:
-        Phonebook(); /*Constructor*/
-        ~Phonebook(); /*Disctructor*/
-    /* Setter */
-        void SetContact(Contacts contact);
-    /* Getter */
-        Contacts GetContact(int index);
-    private :
-        int count;
-        int i;
-        Contacts contacts[8];
+	void AddContact(Contacts& contact);
+	void SearchContact(Contacts& contact);
 };
 
 #endif
