@@ -41,3 +41,13 @@ std::string Contacts::getPhoneNumber() const {
 std::string Contacts::getDarkestSecret() const {
     return DarkestSecret;
 }
+
+void Phonebook::SetContact(Contacts contact){
+    Contacts[i] = contact;
+    if (count < 8)
+        count++;
+    if (i < 7)
+        i++;
+    else
+        i = 0;
+}

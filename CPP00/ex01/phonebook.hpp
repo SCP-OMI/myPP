@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 07:16:36 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/23 07:19:11 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/23 07:39:03 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ private:
     std::string PhoneNumber;
     std::string DarkestSecret;
 public:
-    Contacts(){};
-    ~Contacts(){};
+    Contacts(){}; /*Constructor*/
+    ~Contacts(){}; /*Disctructor*/
+    /* Setters */
     void setFirstName(const std::string& firstName);
     void setLastName(const std::string& lastName);
     void setNickName(const std::string& nickName);
     void setPhoneNumber(const std::string& phoneNumber);
     void setDarkestSecret(const std::string& darkestSecret);
+    /* Getters */
     std::string getFirstName() const;
     std::string getLastName() const;
     std::string getNickName() const;
@@ -39,7 +41,16 @@ public:
 
 
 class Phonebook {
-    private:
+    public:
+        Phonebook(); /*Constructor*/
+        ~Phonebook(); /*Disctructor*/
+    /* Setter */
+        void SetContact(Contacts contact);
+    /* Getter */
+        Contacts GetContact(int index);
+    private :
+        int count;
+        int i;
         Contacts contacts[8];
 };
 
