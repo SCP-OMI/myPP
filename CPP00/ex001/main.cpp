@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/26 09:23:20 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 10:25:24 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,43 @@ void AddContact(PhoneBook *phonebook) {
 }
 
 
+// void ContactResize(std::string){
+// 	Contacts contact;
+	
+// 	if (contact.getFirstName().size() > 10)
+// 		std::cout << std::setw(10) << contact.getFirstName().substr(0,9) + ".|"; 
+// 	if (contact.getLastName().size() > 10)
+// 		std::cout << std::setw(10) << contact.getLastName().substr(0,9) + ".|";
+// 	if (contact.getNickName().size() > 10)
+// 		std::cout << std::setw(10) << contact.getNickName().substr(0,9) + ".|";
+// }
+
 void ListContacts(PhoneBook *phonebook){
 	
 	Contacts contact;
 	int i = 0;
 	
-	std::cout << std::setw(10) << "Index" << "|";
-	std::cout << std::setw(10) << "FirstName" << "|";
-	std::cout << std::setw(10) << "LastName" << "|";
-	std::cout << std::setw(10) << "NickName" << "|" << std::endl;
+	std::cout << std::setw(10) << "Index" << "|", std::cout << std::setw(10) << "FirstName" << "|";
+	std::cout << std::setw(10) << "LastName" << "|", std::cout << std::setw(10) << "NickName" << "|" << std::endl;
 	while (i < phonebook->counter)
 	{
 		contact = phonebook->GetContact(i);
-
 		std::cout << std::setw(10) << i << "|";
-		//if (contact.getFirstName().size() > 10)
-			//contact.getFirstName().substr(10,0);
-		std::cout << std::setw(10) << contact.getFirstName() << "|";
-		std::cout << std::setw(10) << contact.getLastName() << "|";
-		//std::cout << std::setw(10) << contact.getNickName() << "|" << std::endl;
+		if (contact.getFirstName().size() > 10)
+			std::cout << std::setw(10) << contact.getFirstName().substr(0,9) + ".|"; 
+		else
+			std::cout << std::setw(10) << contact.getFirstName() << "|";
+		if (contact.getLastName().size() > 10)
+			std::cout << std::setw(10) << contact.getLastName().substr(0,9) + ".|";
+		else
+			std::cout << std::setw(10) << contact.getLastName() << "|";
+		if (contact.getNickName().size() > 10)
+			std::cout << std::setw(10) << contact.getNickName().substr(0,9) + ".|" << std::endl;
+		else
+			std::cout << std::setw(10) << contact.getNickName() << "|" << std::endl;
 		i++;
 	}
 }
-
-
 
 void SearchContact(PhoneBook *phonebook) {
 	Contacts contact;
@@ -96,10 +109,17 @@ void SearchContact(PhoneBook *phonebook) {
 	{
 		std::getline(std::cin, command);
 		int command_index = std::stoi(command);
-			if (command_index++ > phonebook->index)
-				std::cout << "Please enter a correct index identifier" << std::endl;
-			}
+			if (command_index <= phonebook->index) {
+				contact = phonebook->GetContact(command_index);
+				std::cout << "First Name : " << std::cout << contact.getFirstName() << std::endl;
+				std::cout << "Last Name : " << contact.getLastName() << std::endl;
+				std::cout << "Nick Name :  " << contact.getNickName() << std::endl;
+				std::cout << "Phone Number :  " <<contact.getPhoneNumber() << std::endl;
+				std::cout << "Darkest Secret :  " <<contact.getDarkestSecret() << std::endl;}
 	
+			else 
+				std::cout << "Please enter a correct index identifier" << std::endl;
+	}
 }
 
 int main (){
