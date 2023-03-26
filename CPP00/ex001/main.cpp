@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/26 10:25:24 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 11:10:30 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,49 @@ void AddContact(PhoneBook *phonebook) {
 		
 	std::string input;
 	Contacts tmp_contact;
+	bool a = 1;
 	//int counter = 0, index = 0;
+	while (a)
+	{
 		 /* Get-Set FirstName */
-	std::cout << "FirstName: ";
-	std::getline(std::cin, input);
-	tmp_contact.setFirstName(input);
-		 /* Get-Set LastName */
-	std::cout << "LastName: ";
-	std::getline(std::cin, input);
-	tmp_contact.setLastName(input);
-		 /* Get-Set NickName */
-	std::cout << "NickName: ";
-	std::getline(std::cin, input);
-	tmp_contact.setNickName(input);
-		 /* Get-Set PhoneNumber */   
-	std::cout << "PhoneNumber: ";
-	std::getline(std::cin, input);
-	tmp_contact.setPhoneNumber(input);
-		 /* Get-Set DarkestSecret */
-	std::cout << "DarkestSecret: ";
-	std::getline(std::cin, input);
-	tmp_contact.setDarkestSecret(input);
-	phonebook->SetContact(tmp_contact);
+		std::cout << "FirstName: ";
+		std::getline(std::cin, input);
+		tmp_contact.setFirstName(input);
+		
+			/* Get-Set LastName */
+		std::cout << "LastName: ";
+		std::getline(std::cin, input);
+		tmp_contact.setLastName(input);
+		
+			/* Get-Set NickName */
+		std::cout << "NickName: ";
+		std::getline(std::cin, input);
+		tmp_contact.setNickName(input);
+		
+			/* Get-Set PhoneNumber */
+		std::cout << "PhoneNumber: ";
+		std::getline(std::cin, input);
+		for (int i = 0; input[i]; i++){
+			if (input[i] < '0' || input[i] > '9')
+				a = 0;
+		}
+		tmp_contact.setPhoneNumber(input);
+			/* Get-Set DarkestSecret */
+		std::cout << "DarkestSecret: ";
+		std::getline(std::cin, input);
+		tmp_contact.setDarkestSecret(input);
+		phonebook->SetContact(tmp_contact);
+		if (a == 1)
+			break;
+		a = 1;
+		std::cout << "invalid input, please check" << std::endl;
+	}
+
 	std::cout << "CONTACT HAS BEEN CREATED SUCCESSFULY !!" << std::endl;
 	
-	// std::cout << std::setw(10) << phonebook->index << "|";
-	// 	std::cout << std::setw(10) << tmp_contact.getFirstName() << "|";
-	// 	std::cout << std::setw(10) << tmp_contact.getLastName() << "|";
-	// 	std::cout << std::setw(10) << tmp_contact.getNickName() << "|" << std::endl;
-		
+	// error:
+	// 	std::cout << "Error in your input, please try again" << std::endl;
+	
 	sleep(1);
 	phonebook->index++;
 	if (phonebook->index > 7)
