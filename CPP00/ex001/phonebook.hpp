@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 09:32:38 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/25 03:50:40 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 07:41:00 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ class PhoneBook {
 };
 		void SearchContact();
 		void AddContact();
+		void ListContacts();
 #endif
