@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/26 07:48:45 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 09:23:20 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void AddContact(PhoneBook *phonebook) {
 		
 	std::string input;
 	Contacts tmp_contact;
-	int counter = 0, index = 0;
+	//int counter = 0, index = 0;
 		 /* Get-Set FirstName */
 	std::cout << "FirstName: ";
 	std::getline(std::cin, input);
@@ -45,70 +45,81 @@ void AddContact(PhoneBook *phonebook) {
 	tmp_contact.setDarkestSecret(input);
 	phonebook->SetContact(tmp_contact);
 	std::cout << "CONTACT HAS BEEN CREATED SUCCESSFULY !!" << std::endl;
+	
+	// std::cout << std::setw(10) << phonebook->index << "|";
+	// 	std::cout << std::setw(10) << tmp_contact.getFirstName() << "|";
+	// 	std::cout << std::setw(10) << tmp_contact.getLastName() << "|";
+	// 	std::cout << std::setw(10) << tmp_contact.getNickName() << "|" << std::endl;
+		
 	sleep(1);
-	index++;
-	if (index > 7)
-		index = 0;
-	if (counter < 8)
-		counter++;
+	phonebook->index++;
+	if (phonebook->index > 7)
+		phonebook->index = 0;
+	if (phonebook->counter < 8)
+		phonebook->counter++;
 }
 
 
-void ListContacts(){
-	Contacts contact;
-	std::cout << std::setw(10) << "Index" << "|";
-    std::cout << std::setw(10) << "FirstName" << "|";
-    std::cout << std::setw(10) << "LastName" << "|";
-    std::cout << std::setw(10) << "NickName" << "|" << std::endl;
-	int i = 0;
-	std::cout << std::setw(10) << i << "|";
-	std::cout << std::setw(10) << contact.getFirstName() << "|";
-	std::cout << std::setw(10) << contact.getLastName() << "|";
-	std::cout << std::setw(10) << contact.getNickName() << "|" << std::endl;
+void ListContacts(PhoneBook *phonebook){
 	
+	Contacts contact;
+	int i = 0;
+	
+	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "FirstName" << "|";
+	std::cout << std::setw(10) << "LastName" << "|";
+	std::cout << std::setw(10) << "NickName" << "|" << std::endl;
+	while (i < phonebook->counter)
+	{
+		contact = phonebook->GetContact(i);
+
+		std::cout << std::setw(10) << i << "|";
+		//if (contact.getFirstName().size() > 10)
+			//contact.getFirstName().substr(10,0);
+		std::cout << std::setw(10) << contact.getFirstName() << "|";
+		std::cout << std::setw(10) << contact.getLastName() << "|";
+		//std::cout << std::setw(10) << contact.getNickName() << "|" << std::endl;
+		i++;
+	}
 }
 
 
 
 void SearchContact(PhoneBook *phonebook) {
 	Contacts contact;
-	contact = phonebook->GetContact(0);
-	ListContacts();
-	/* You need to show a grid of 4 elements (index, FirstName, LastName, NickName)*/
-	//printf("%d\n", counter);
-	//printf("%d\n", g_i);
-	//instead of having a fixed counter 5, you need to have a int counter that tracks the number of contacts you have.
+	std::string command;
+	ListContacts(phonebook);
+
+	std::cout << "Please enter the index of the contact you want to expand" << std::endl;
+
+	while (1337)
+	{
+		std::getline(std::cin, command);
+		int command_index = std::stoi(command);
+			if (command_index++ > phonebook->index)
+				std::cout << "Please enter a correct index identifier" << std::endl;
+			}
 	
 }
 
-/*You will have to make two "structs", one has contact information, called Contacts
-	and one which holds up to 8 contacts; called PhoneBook
-"*/
 int main (){
 	PhoneBook phonebook;
 	std::string command = "";
 
-	usleep(800);
 	std::cout << "Welcome to your AMAZING PHONEBOOK !!" << std::endl;
-	sleep(1);
-
+	usleep(800);
+	phonebook.counter = 0;
+	phonebook.index = 0;
 	while (1)
 	{
 		if (command != "ADD" || command != "SEARCH" || command != "EXIT")
 			std::cout << "Valid commands are ADD-SEARCH-EXIT : ";
 		std::getline(std::cin, command);
 		if (command == "ADD")
-			// phonebook.contact[index] = AddContact();
 			AddContact(&phonebook);
 		else if (command == "SEARCH")
 			SearchContact(&phonebook);
-		// else if (command == "EXIT")
-		// 	exit(0);
-		// else
-		// {
-		// 	error :
-		// 		std::cout << "NIGGA TYPE GOOD" << std::endl;
-				
-		// }
+		else if (command == "EXIT")
+			exit(0);
 	}
 }

@@ -2,22 +2,20 @@ NAME	= phonebook
 
 SRC		= contacts.cpp main.cpp phonebook.cpp
 
-OBJ		= ${SRC:.cpp=.o}
-
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM		= rm -rf
 
 all	: $(NAME)
 
-${NAME}	: ${OBJ}
-	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+${NAME}	: 
+	@clang++ $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean   :
-	${RM} ${OBJ}
+	@${RM} ${OBJ}
 
 fclean	: clean
-	${RM} $(NAME)
+	@${RM} $(NAME)
 
 re		: fclean all
 
