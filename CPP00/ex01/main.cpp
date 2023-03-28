@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/28 14:48:35 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:54:46 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,8 +133,9 @@ void SearchContact(PhoneBook *phonebook) {
 	Contacts contact;
 	std::string command;
 	ListContacts(phonebook);
-	if (phonebook->index < 1)
+	if (phonebook->index < 1) {
 		std::cout << "Your contact list is empty, please use the command ADD to create and store a new contact" << std::endl;
+		return;}
 	else
 		std::cout << "Please enter the index of the contact you want to expand" << std::endl;
 	std::getline(std::cin, command);
@@ -147,7 +148,7 @@ void SearchContact(PhoneBook *phonebook) {
 		int command_index = atoi(command.c_str());
 		if (command_index == 0 && command != "0"){
 			std::cout << "Please enter a correct index identifier" << std::endl;
-			break;}
+			return;}
 		else if (command_index <= phonebook->index) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << "First Name : " << std::cout << contact.getFirstName() << std::endl;
