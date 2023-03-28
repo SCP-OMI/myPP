@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/28 14:02:19 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:48:35 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,24 +137,28 @@ void SearchContact(PhoneBook *phonebook) {
 		std::cout << "Your contact list is empty, please use the command ADD to create and store a new contact" << std::endl;
 	else
 		std::cout << "Please enter the index of the contact you want to expand" << std::endl;
+	std::getline(std::cin, command);
+	if (std::cin.eof())
+		exit(0);
+		
 
 	while (phonebook->index > 0)
 	{
-		std::getline(std::cin, command);
-		if (std::cin.eof())
-			exit(0);
-		int command_index = std::stoi(command);
-			if (command_index <= phonebook->index) {
-				contact = phonebook->GetContact(command_index);
-				std::cout << "First Name : " << std::cout << contact.getFirstName() << std::endl;
-				std::cout << "Last Name : " << contact.getLastName() << std::endl;
-				std::cout << "Nick Name : " << contact.getNickName() << std::endl;
-				std::cout << "Phone Number : " <<contact.getPhoneNumber() << std::endl;
-				std::cout << "Darkest Secret : " <<contact.getDarkestSecret() << std::endl;
-				break;}
-	
-			else 
-				std::cout << "Please enter a correct index identifier" << std::endl;
+		int command_index = atoi(command.c_str());
+		if (command_index == 0 && command != "0"){
+			std::cout << "Please enter a correct index identifier" << std::endl;
+			break;}
+		else if (command_index <= phonebook->index) {
+			contact = phonebook->GetContact(command_index);
+			std::cout << "First Name : " << std::cout << contact.getFirstName() << std::endl;
+			std::cout << "Last Name : " << contact.getLastName() << std::endl;
+			std::cout << "Nick Name : " << contact.getNickName() << std::endl;
+			std::cout << "Phone Number : " <<contact.getPhoneNumber() << std::endl;
+			std::cout << "Darkest Secret : " <<contact.getDarkestSecret() << std::endl;
+			break;}
+
+		else 
+			std::cout << "Please enter a correct index identifier" << std::endl;
 	}
 }
 
