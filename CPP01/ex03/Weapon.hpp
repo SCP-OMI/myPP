@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:35:22 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 17:36:18 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:39:05 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Weapon {
 		~Weapon();
 		const std::string& getType();
 		void setType(std::string type);
+		Weapon operator= (const Weapon& copy);
 
 };
 
