@@ -6,11 +6,11 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:44:30 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 00:22:08 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/30 02:16:54 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
  Zombie::Zombie(){
 }
