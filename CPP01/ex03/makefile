@@ -1,6 +1,6 @@
 NAME	= Unnecessary_violence
 
-SRC		= main.cpp
+SRC		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM		= rm -rf

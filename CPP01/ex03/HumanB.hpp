@@ -6,17 +6,19 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:31:41 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 14:43:20 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:36:14 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMAN_B_HPP
 #define HUMAN_B_HPP
+#include <iostream>
+#include "Weapon.hpp"
 
 class HumanB {
 	private :
-		std::string name;
 		Weapon weapon;
+		std::string name;
 	public :
 		HumanB();
 		~HumanB();
