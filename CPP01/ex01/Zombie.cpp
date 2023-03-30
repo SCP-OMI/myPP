@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 18:13:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/29 22:36:00 by mcharouh         ###   ########.fr       */
+/*   Created: 2023/03/29 22:44:30 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/03/30 00:22:08 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "zombie.hpp"
 
  Zombie::Zombie(){
 }
  Zombie::~Zombie(){
-	std::cout << "Zombies have been slayed" << std::endl;
+	std::cout << "Hord of zombies have been slayed" << std::endl;
 }
 
 std::string Zombie::Get_z_name(){

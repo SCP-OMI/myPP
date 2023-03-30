@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 18:13:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/29 22:36:00 by mcharouh         ###   ########.fr       */
+/*   Created: 2023/03/29 22:44:57 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/03/30 00:15:09 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
- Zombie::Zombie(){
-}
- Zombie::~Zombie(){
-	std::cout << "Zombies have been slayed" << std::endl;
-}
 
-std::string Zombie::Get_z_name(){
-	return Z_name;
-}
+class zombie{
+	private :
+		std::string Z_name;
+	public :
+		Zombie();
+		~Zombie();
+		void announce(void);
+};
+	Zombie* zombieHorde( int N, std::string name );
+	
+#endif;
