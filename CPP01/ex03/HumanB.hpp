@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:31:41 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 06:46:37 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:15:03 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class HumanB {
 	public :
 		HumanB();
 		~HumanB();
+		void attack(std::string type);
 }
 
 
