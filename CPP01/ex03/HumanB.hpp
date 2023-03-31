@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 06:31:41 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 18:54:58 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/03/31 03:17:36 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class HumanB {
 		HumanB(std::string name);
 		~HumanB();
 		void attack();
-		void setWeapon(Weapon weapon);
+		void setWeapon(Weapon &weapon);
 		Weapon GetWeapon();
+		void getAddWeapon();
 };
 
 
