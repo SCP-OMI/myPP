@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:44:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/25 02:27:09 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/01 23:32:49 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,3 @@ std::string Contacts::getPhoneNumber() const {
 std::string Contacts::getDarkestSecret() const {
     return DarkestSecret;
 }
-

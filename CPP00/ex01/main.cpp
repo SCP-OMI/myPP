@@ -6,15 +6,13 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 09:08:56 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/01 23:34:28 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "contacts.hpp"
-#include <unistd.h>          
-#include <string.h>
-#include <cstdlib>
+
 #include "phonebook.hpp"
 
 void AddContact(PhoneBook *phonebook) {
@@ -133,11 +131,11 @@ void ListContacts(PhoneBook *phonebook){
 void SearchContact(PhoneBook *phonebook) {
 	Contacts contact;
 	std::string command;
-	ListContacts(phonebook);
 	if (phonebook->index < 1) {
 		std::cout << "Your contact list is empty, please use the command ADD to create and store a new contact" << std::endl;
 		return;}
 	else
+		ListContacts(phonebook);
 		std::cout << "Please enter the index of the contact you want to expand" << std::endl;
 	std::getline(std::cin, command);
 	if (std::cin.eof())
