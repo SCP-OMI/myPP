@@ -6,7 +6,13 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 06:30:21 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 06:30:22 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:08:33 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
+
+int main (){
+	Harl harl;
+	harl.complain("ERROR");
+}
