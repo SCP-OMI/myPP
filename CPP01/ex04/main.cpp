@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainc.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 01:46:58 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 02:21:52 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:46:58 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void stdReplace(char **av) {
 		}
 		else {
 			std::cerr << "Failed to obtain file from file, check if the file exists and has the right permissions" << std::endl;
-			exit(127);
+			exit(1);
 		}
 	}
 	else {
 		std::cerr << "Failed to obtain file from file, check if file is empty" << std::endl;
-		exit (127);
+		exit (1);
 	}
 }
 

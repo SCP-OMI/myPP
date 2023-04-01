@@ -1,7 +1,7 @@
-NAME = phonebook
-CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
+NAME = Sed_but_better
+CFLAGS = c++ -std=c++11 -Wall -Wextra -Werror
 
-FILES = main.cpp contacts.cpp phonebook.cpp
+FILES = main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)
