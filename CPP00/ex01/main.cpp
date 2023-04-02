@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/02 10:42:22 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/02 10:49:35 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void AddContact(PhoneBook *phonebook) {
 	}
 
 	sleep(1);
-	std::cout << "CONTACT HAS BEEN CREATED SUCCESSFULY !!" << std::endl;
+	std::cout << "\033[1;34mCONTACT HAS BEEN CREATED SUCCESSFULY !!\033[0m" << std::endl;
 	usleep(1000000);
 	
 	phonebook->index++;
@@ -89,18 +89,6 @@ void AddContact(PhoneBook *phonebook) {
 	if (phonebook->counter < 8)
 		phonebook->counter++;
 }
-
-
-// void ContactResize(std::string){
-// 	Contacts contact;
-	
-// 	if (contact.getFirstName().size() > 10)
-// 		std::cout << std::setw(10) << contact.getFirstName().substr(0,9) + ".|"; 
-// 	if (contact.getLastName().size() > 10)
-// 		std::cout << std::setw(10) << contact.getLastName().substr(0,9) + ".|";
-// 	if (contact.getNickName().size() > 10)
-// 		std::cout << std::setw(10) << contact.getNickName().substr(0,9) + ".|";
-// }
 
 void ListContacts(PhoneBook *phonebook){
 	
@@ -149,7 +137,7 @@ void SearchContact(PhoneBook *phonebook) {
 		if (command_index == 0 && command != "0" && command_index < 0){
 			std::cout << "Please enter a correct index identifier" << std::endl;
 			return;}
-		else if (command_index < phonebook->index && command_index > 0) {
+		else if (command_index <= phonebook->index && command_index >= 0) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
@@ -185,7 +173,7 @@ int main (){
 		else if (command == "SEARCH")
 			SearchContact(&phonebook);
 		else if (command == "EXIT"){
-			std::cout << "Bye Bye !!" << std::endl;
+			std::cout << "\033[1;34mBye Bye !!!\033[0m" << std::endl;
 			sleep(1);
 			exit(0);
 		}
