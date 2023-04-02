@@ -6,11 +6,16 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:44:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 23:32:49 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/02 10:13:01 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contacts.hpp"
+
+Contacts::Contacts(){   
+}
+Contacts::~Contacts(){
+}
 
 void Contacts::setFirstName(const std::string& firstName) {
     FirstName = firstName;

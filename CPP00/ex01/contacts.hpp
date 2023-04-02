@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:38:53 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/25 00:49:32 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/02 10:14:27 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Contacts{
 		std::string PhoneNumber;
 		std::string DarkestSecret;
 	public :
-		Contacts(){}
-		~Contacts(){}
+		Contacts();
+		~Contacts();
 	 	/* Setters */
 		void setFirstName(const std::string& firstName);
 		void setLastName(const std::string& lastName);

@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 23:34:28 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/02 09:58:00 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,11 +150,11 @@ void SearchContact(PhoneBook *phonebook) {
 			return;}
 		else if (command_index <= phonebook->index) {
 			contact = phonebook->GetContact(command_index);
-			std::cout << "First Name : " << contact.getFirstName() << std::endl;
+			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
 			std::cout << "Nick Name : " << contact.getNickName() << std::endl;
 			std::cout << "Phone Number : " <<contact.getPhoneNumber() << std::endl;
-			std::cout << "Darkest Secret : " <<contact.getDarkestSecret() << std::endl;
+			std::cout << "Darkest Secret : " <<contact.getDarkestSecret() << std::endl << std::endl;
 			break;}
 
 		else 
