@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/02 09:58:00 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/02 10:42:22 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,10 @@ void AddContact(PhoneBook *phonebook) {
 		std::cout << "invalid input, please check" << std::endl;
 	}
 
-	std::cout << "CONTACT HAS BEEN CREATED SUCCESSFULY !!" << std::endl;
-	
 	sleep(1);
+	std::cout << "CONTACT HAS BEEN CREATED SUCCESSFULY !!" << std::endl;
+	usleep(1000000);
+	
 	phonebook->index++;
 	if (phonebook->index > 7)
 		phonebook->index = 0;
@@ -145,10 +146,10 @@ void SearchContact(PhoneBook *phonebook) {
 	while (phonebook->index > 0)
 	{
 		int command_index = atoi(command.c_str());
-		if (command_index == 0 && command != "0"){
+		if (command_index == 0 && command != "0" && command_index < 0){
 			std::cout << "Please enter a correct index identifier" << std::endl;
 			return;}
-		else if (command_index <= phonebook->index) {
+		else if (command_index < phonebook->index && command_index > 0) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
@@ -157,8 +158,10 @@ void SearchContact(PhoneBook *phonebook) {
 			std::cout << "Darkest Secret : " <<contact.getDarkestSecret() << std::endl << std::endl;
 			break;}
 
-		else 
+		else{
 			std::cout << "Please enter a correct index identifier" << std::endl;
+			break;
+		}
 	}
 }
 
@@ -166,7 +169,7 @@ int main (){
 	PhoneBook phonebook;
 	std::string command = "";
 
-	std::cout << "Welcome to your AMAZING PHONEBOOK !!" << std::endl;
+	std::cout << "\033[1;34mWelcome to your AMAZING PHONEBOOK !!\033[0m" << std::endl;
 	usleep(800);
 	phonebook.counter = 0;
 	phonebook.index = 0;
