@@ -1,5 +1,5 @@
 NAME = Sed_but_better
-CFLAGS = c++ -std=c++11 -Wall -Wextra -Werror
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
 FILES = main.cpp
 OBJS = $(FILES:.cpp=.o)
