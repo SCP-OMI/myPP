@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 09:32:38 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/02 10:21:52 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:08:33 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ class PhoneBook {
 	public :
 		PhoneBook();
 		~PhoneBook();
-		int index;
-		int counter;
-		void SetContact(Contacts contact);
+		void SetContact(Contacts contact, int Contact_index);
 		Contacts GetContact(int indexx);
 		void SetCounter(int counter);
 		int GetCounter();

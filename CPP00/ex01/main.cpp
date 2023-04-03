@@ -6,14 +6,17 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/03 14:00:24 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:43:36 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "contacts.hpp"
-
 #include "phonebook.hpp"
+
+int Contact_counter = 0;
+int Contact_index = 0;
+
 
 void AddContact(PhoneBook *phonebook) {
 		
@@ -72,7 +75,7 @@ void AddContact(PhoneBook *phonebook) {
 			tmp_contact.setDarkestSecret(input);
 		else 
 			a = 0;
-		phonebook->SetContact(tmp_contact);
+		phonebook->SetContact(tmp_contact, Contact_index);
 		if (a == 1)
 			break;
 		a = 1;
@@ -83,11 +86,11 @@ void AddContact(PhoneBook *phonebook) {
 	std::cout << "\033[1;34mCONTACT HAS BEEN CREATED SUCCESSFULY !!\033[0m" << std::endl;
 	usleep(1000000);
 	
-	phonebook->index++;
-	if (phonebook->index > 7)
-		phonebook->index = 0;
-	if (phonebook->counter < 8)
-		phonebook->counter++;
+	Contact_index++;
+	if (Contact_index > 7)
+		Contact_index = 0;
+	if (Contact_counter < 8)
+		Contact_counter++;
 }
 
 void ListContacts(PhoneBook *phonebook){
@@ -97,7 +100,7 @@ void ListContacts(PhoneBook *phonebook){
 	
 	std::cout << std::setw(10) << "Index" << "|", std::cout << std::setw(10) << "FirstName" << "|";
 	std::cout << std::setw(10) << "LastName" << "|", std::cout << std::setw(10) << "NickName" << "|" << std::endl;
-	while (i < phonebook->counter)
+	while (i < Contact_counter)
 	{
 		contact = phonebook->GetContact(i);
 		std::cout << std::setw(10) << i << "|";
@@ -117,10 +120,11 @@ void ListContacts(PhoneBook *phonebook){
 	}
 }
 
+
 void SearchContact(PhoneBook *phonebook) {
 	Contacts contact;
 	std::string command;
-	if (phonebook->index < 1) {
+	if (Contact_counter < 1) {
 		std::cout << "Your contact list is empty, please use the command ADD to create and store a new contact" << std::endl;
 		return;}
 	else
@@ -129,15 +133,16 @@ void SearchContact(PhoneBook *phonebook) {
 	std::getline(std::cin, command);
 	if (std::cin.eof())
 		exit(0);
+	
 	int command_index = atoi(command.c_str());
 	if ((command_index == 0 && command != "0" && command_index < 0) || command.empty()){
 		std::cout << "Please enter a correct index identifier" << std::endl;
 		return;}
 		
 
-	while (phonebook->index > 0)
+	while (Contact_counter > 0)
 	{
-		if (command_index <= phonebook->index && command_index >= 0) {
+		if (command_index <= Contact_index && command_index >= 0 && command_index <= 7) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
@@ -159,8 +164,6 @@ int main (){
 
 	std::cout << "\033[1;34mWelcome to your AMAZING PHONEBOOK !!\033[0m" << std::endl;
 	usleep(800);
-	phonebook.counter = 0;
-	phonebook.index = 0;
 	while (1)
 	{
 		if (command != "ADD" || command != "SEARCH" || command != "EXIT")
