@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/02 10:49:35 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:00:24 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,19 +125,19 @@ void SearchContact(PhoneBook *phonebook) {
 		return;}
 	else
 		ListContacts(phonebook);
-		std::cout << "Please enter the index of the contact you want to expand" << std::endl;
+	std::cout << "Please enter the index of the contact you want to expand" << std::endl;
 	std::getline(std::cin, command);
 	if (std::cin.eof())
 		exit(0);
+	int command_index = atoi(command.c_str());
+	if ((command_index == 0 && command != "0" && command_index < 0) || command.empty()){
+		std::cout << "Please enter a correct index identifier" << std::endl;
+		return;}
 		
 
 	while (phonebook->index > 0)
 	{
-		int command_index = atoi(command.c_str());
-		if (command_index == 0 && command != "0" && command_index < 0){
-			std::cout << "Please enter a correct index identifier" << std::endl;
-			return;}
-		else if (command_index <= phonebook->index && command_index >= 0) {
+		if (command_index <= phonebook->index && command_index >= 0) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
