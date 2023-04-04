@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/03 16:43:36 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:55:28 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void AddContact(PhoneBook *phonebook) {
 	std::string input;
 	Contacts tmp_contact;
 	bool a = 1;
-	//int counter = 0, index = 0;
 	while (a)
 	{
 		 /* Get-Set FirstName */

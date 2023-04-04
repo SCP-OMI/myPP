@@ -1,5 +1,5 @@
 NAME = phonebook
-CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror -Wl,-Map=output.map
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
 FILES = main.cpp contacts.cpp phonebook.cpp
 OBJS = $(FILES:.cpp=.o)

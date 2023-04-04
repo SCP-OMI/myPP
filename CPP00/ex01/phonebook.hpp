@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 09:32:38 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/03 16:08:33 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:57:00 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class PhoneBook {
 		Contacts GetContact(int indexx);
 		void SetCounter(int counter);
 		int GetCounter();
-	/* You will need to have a function that prints a specefic contact from the phonebook*/	
 };
 		void SearchContact();
 		void AddContact();
