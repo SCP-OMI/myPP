@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/04 12:22:56 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:32:48 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,6 @@ void SearchContact(PhoneBook *phonebook) {
 	
 	while (Contact_counter > 0)
 	{
-		//std::cout << "this the CI : " << command_index << "  this is the CONI : " << Contact_index << "  This is the Contact counter : "  << Contact_counter << std::endl;
 		if (command_index <= Contact_counter - 1 && command_index >= 0 && command_index <= 7) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
