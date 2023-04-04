@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 09:32:38 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/04 10:57:00 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:35:26 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <unistd.h>          
 #include <string.h>
 #include <cstdlib>
+#include <ctype.h>
 
 
 class PhoneBook {

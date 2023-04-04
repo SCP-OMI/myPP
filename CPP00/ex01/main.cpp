@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 08:25:00 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/04 10:55:28 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:22:56 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void AddContact(PhoneBook *phonebook) {
 			if (input[i] < '0' || input[i] > '9')
 				a = 0;
 		}
-		//a = 0;
 		tmp_contact.setPhoneNumber(input);
 			/* Get-Set DarkestSecret */
 		std::cout << "DarkestSecret: ";
@@ -116,6 +115,7 @@ void ListContacts(PhoneBook *phonebook){
 		else
 			std::cout << std::setw(10) << contact.getNickName() << "|" << std::endl;
 		i++;
+		
 	}
 }
 
@@ -133,15 +133,22 @@ void SearchContact(PhoneBook *phonebook) {
 	if (std::cin.eof())
 		exit(0);
 	
+	for (size_t i = 0; i < command.length(); i++){
+		if(isalpha(command[i])){
+			std::cout << "Please enter a correct index identifier" << std::endl;
+			return;
+		}
+	}
 	int command_index = atoi(command.c_str());
 	if ((command_index == 0 && command != "0" && command_index < 0) || command.empty()){
 		std::cout << "Please enter a correct index identifier" << std::endl;
 		return;}
 		
-
+	
 	while (Contact_counter > 0)
 	{
-		if (command_index <= Contact_index && command_index >= 0 && command_index <= 7) {
+		//std::cout << "this the CI : " << command_index << "  this is the CONI : " << Contact_index << "  This is the Contact counter : "  << Contact_counter << std::endl;
+		if (command_index <= Contact_counter - 1 && command_index >= 0 && command_index <= 7) {
 			contact = phonebook->GetContact(command_index);
 			std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
 			std::cout << "Last Name : " << contact.getLastName() << std::endl;
@@ -151,7 +158,7 @@ void SearchContact(PhoneBook *phonebook) {
 			break;}
 
 		else{
-			std::cout << "Please enter a correct index identifier" << std::endl;
+			std::cout << "Please enter a correcttttt index identifier" << std::endl;
 			break;
 		}
 	}
