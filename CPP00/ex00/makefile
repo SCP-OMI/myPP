@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = megaphone
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
 FILES = megaphone.cpp
