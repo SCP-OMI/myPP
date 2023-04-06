@@ -8,7 +8,7 @@ RM		= rm -rf
 all	: $(NAME)
 
 ${NAME}	: 
-	@clang++ $(CPPFLAGS) $(SRC) -o $(NAME)
+	@c++ $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean   :
 	@${RM} ${OBJ}

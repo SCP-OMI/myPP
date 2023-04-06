@@ -1,25 +1,23 @@
-NAME	= Unnecessary_violence
+NAME = Unnecessary_violence
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-SRC		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+FILES =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = $(FILES:.cpp=.o)
 
-RM		= rm -f
+all : $(NAME)
 
-all	: $(NAME)
-
-${NAME}	: $(OBJS)
-	@c++ $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJS) 
+		@$(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CFLAGS) -c $< -o $@
+	@$(CFLAGS) -c $< -o $@
 
-clean   :
-	@${RM} ${OBJ}
+clean:
+	@rm -f $(OBJS)
 
-fclean	: clean
-	@${RM} $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 
-re		: fclean all
+re: fclean all
 
-.PHONY	:	all fclean re clean
+.PHONY : clean all fclean re

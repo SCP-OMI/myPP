@@ -1,21 +1,23 @@
-NAME	= HiyaBrain
+NAME = HiyaBrain
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-SRC		= main.cpp
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+FILES = main.cpp
+OBJS = $(FILES:.cpp=.o)
 
-RM		= rm -rf
+all : $(NAME)
 
-all	: $(NAME)
+$(NAME): $(OBJS) 
+		@$(CFLAGS) $(OBJS) -o $(NAME)
 
-${NAME}	: 
-	@clang++ $(CPPFLAGS) $(SRC) -o $(NAME)
+%.o: %.cpp
+	@$(CFLAGS) -c $< -o $@
 
-clean   :
-	@${RM} ${OBJ}
+clean:
+	@rm -f $(OBJS)
 
-fclean	: clean
-	@${RM} $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 
-re		: fclean all
+re: fclean all
 
-.PHONY	:	all fclean re clean
+.PHONY : clean all fclean re

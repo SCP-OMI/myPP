@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 06:30:14 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/01 08:22:41 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:36:21 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Harl::Harl(){
 	this->level[0] = "DEBUG";
 	this->level[1] = "INFO";
-	this->level[0] = "WARNING";
-	this->level[0] = "ERROR";
+	this->level[2] = "WARNING";
+	this->level[3] = "ERROR";
 
 	this->complainer[0] = &Harl::debug;
 	this->complainer[1] = &Harl::info;

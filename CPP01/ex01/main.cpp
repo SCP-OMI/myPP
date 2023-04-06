@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:44:28 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/03/30 02:16:57 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:27:31 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void Zombie::Set_z_name(std::string zombieName){
 	Z_name = zombieName;
 }
 
-
-
-
-
 int main (){
-	Zombie* zombie = zombieHorde(5, "zombie");
+	Zombie* zombie = zombieHorde(2, "zombie");
 	delete [] zombie;
 }
