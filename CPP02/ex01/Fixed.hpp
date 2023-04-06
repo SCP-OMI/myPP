@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:48:44 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 23:17:45 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 23:26:05 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Fixed{
 		Fixed(const int integer);
 		Fixed();
 		Fixed(const float _float);
-	//	Fixed(const Fixed& other);
 		int getFixed_p(void) const;
 		void operator= (const Fixed &fixed);
 		~Fixed();

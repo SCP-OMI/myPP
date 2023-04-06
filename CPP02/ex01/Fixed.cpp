@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:52:56 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 23:21:23 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 23:25:56 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ Fixed::Fixed(const int _int){
 }
 
 Fixed::Fixed(){
-	//std::cout << "Constructor has been called" << std::endl;
+	std::cout << "Constructor has been called" << std::endl;
 }
 
-// Fixed::Fixed(const Fixed& other){
-// 	std::cout << "Copy Const has been called" << std::endl;
-// }
 
 Fixed::Fixed(const float _float){
 	std::cout << "Float Constructor called" << std::endl;
