@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:16:59 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 12:37:54 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:45:25 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ Fixed::Fixed(){
 
 Fixed::Fixed(const Fixed& other){
 	std::cout << "Copy constructor called" << std::endl;
-	this->Fixed_p = other.Fixed_p;
-	//this->Fractional_bits = other.Fractional_bits;
+	*this = other;
 }
 
 Fixed::~Fixed(){
@@ -39,5 +38,5 @@ void Fixed::setRawBits(int const raw){
 
 void Fixed::operator= (const Fixed &fixed){
 	std::cout << "Copy assignment operator has been called" << std::endl;
-	this->Fixed_p = fixed.Fixed_p;
+	this->Fixed_p = fixed.getRawBits();
 }
