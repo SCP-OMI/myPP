@@ -6,19 +6,19 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:52:56 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 16:15:34 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:39:42 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(const int _int){
-	std::cout << "Int Constructor called" << std::endl;
+	std::cout << "Int Constructbor called" << std::endl;
 	this ->Fixed_p = _int << this->Fractional_bits; 
 }
 
 Fixed::Fixed(){
-	std::cout << "Constructor has been called" << std::endl;
+	//std::cout << "Constructor has been called" << std::endl;
 }
 
 // Fixed::Fixed(const Fixed& other){
@@ -27,7 +27,10 @@ Fixed::Fixed(){
 
 Fixed::Fixed(const float _float){
 	std::cout << "Float Constructor called" << std::endl;
-	this ->Fixed_p = (int)_float << this->Fractional_bits;
+	const int scale_factor = 1 << this->Fractional_bits;
+  	this->Fixed_p = _float * scale_factor;
+	//std::cout << this->Fixed_p << std::endl;
+	this->Fixed_p = (float)(this->Fixed_p / scale_factor);
 }
 
 void Fixed::operator= (const Fixed &fixed){
@@ -52,7 +55,7 @@ int Fixed::toInt()const{
 }
 
 std::ostream & operator<< (std::ostream &os, const Fixed &fixed){
-	os << fixed.getFixed_p() << std::endl;
+	os << fixed.toFloat() << std::endl;
 	return os;
 }
 

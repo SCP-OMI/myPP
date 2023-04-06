@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:48:44 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 16:12:49 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:39:57 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Fixed{
 };
 
 std::ostream &operator<< (std::ostream &os, const Fixed &fixed);
-
 
 
 #endif
