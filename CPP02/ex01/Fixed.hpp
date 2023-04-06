@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:48:44 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 13:27:40 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:12:49 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ class Fixed{
 		static const int Fractional_bits = 8;
 	public :
 		Fixed(const int integer);
+		Fixed();
 		Fixed(const float);
-		Fixed(const Fixed& other);
+	//	Fixed(const Fixed& other);
+		int getFixed_p(void) const;
 		void operator= (const Fixed &fixed);
-		void operator<< (const Fixed &fixed);
 		~Fixed();
 		float toFloat(void) const;
 		int toInt(void) const;
 };
+
+std::ostream &operator<< (std::ostream &os, const Fixed &fixed);
 
 
 
