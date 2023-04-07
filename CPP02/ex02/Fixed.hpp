@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 23:25:28 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/07 02:55:46 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:02:09 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,20 @@ class Fixed{
 		int Fixed_p;
 		static const int Fractional_bits = 8;
 	public :
-		Fixed(const int integer);
 		Fixed();
+		Fixed(const int integer);
 		Fixed(const float _float);
-		Fixed(const Fixed& other);
+		/*Getter*/
 		int getFixed_p(void) const;
-		~Fixed();
+		/*Fixed Operations*/
 		float toFloat(void) const;
 		int toInt(void) const;
+		/*Connonical form needs*/
+		Fixed(const Fixed& other);
 		Fixed & operator= (const Fixed &fixed);
 		/*Comparision Overloaders*/
-		bool operator> (const Fixed &fixed);
-		bool operator< (const Fixed &fixed);
+		bool operator> (const Fixed &fixed) const;
+		bool operator< (const Fixed &fixed) const;
 		bool operator>= (const Fixed &fixed);
 		bool operator<= (const Fixed &fixed);
 		bool operator== (const Fixed &fixed);
@@ -48,6 +50,12 @@ class Fixed{
 		Fixed operator++(int);
 		Fixed & operator--();
 		Fixed operator--(int);
+		~Fixed();
+		/*Min Max member functions*/
+		static Fixed& min(Fixed& fixed_a, Fixed& fixed_b);
+		static Fixed& max(Fixed& fixed_a, Fixed& fixed_b);
+		static Fixed& min(const Fixed& fixed_a, const Fixed& fixed_b);
+		static Fixed& max(const Fixed& fixed_a, const Fixed& fixed_b);
 		
 };
 

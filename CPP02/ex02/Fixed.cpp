@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:03:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/07 03:03:47 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:02:20 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ Fixed & Fixed::operator= (const Fixed &fixed){
 
 /*Comparision Overloaders*/
 
-bool Fixed::operator> (const Fixed &fixed){
+bool Fixed::operator> (const Fixed &fixed) const {
 	return (this->Fixed_p > fixed.Fixed_p);
 }
 
-bool Fixed::operator< (const Fixed &fixed){
+bool Fixed::operator< (const Fixed &fixed) const{
 	return (this->Fixed_p < fixed.Fixed_p);
 
 }
@@ -143,3 +143,28 @@ Fixed Fixed::operator--(int){
 	tmp.Fixed_p--;
 	return(tmp);
 }
+
+/*Min Max member functions*/
+
+Fixed& Fixed::min(Fixed& fixed_a, Fixed& fixed_b){
+	static Fixed min;
+	min = (fixed_a < fixed_b) ? fixed_a : fixed_b;
+	return min;
+}
+Fixed& Fixed::max(Fixed& fixed_a, Fixed& fixed_b){
+	static Fixed max;
+	max = (fixed_a < fixed_b) ? fixed_b : fixed_a;
+	return max;
+}
+Fixed& Fixed::min(const Fixed& fixed_a, const Fixed& fixed_b){
+	static Fixed min;
+	min = (fixed_a < fixed_b) ? fixed_a : fixed_b;
+	return min;
+}
+Fixed& Fixed::max(const Fixed& fixed_a, const Fixed& fixed_b){
+	static Fixed max;
+	max = (fixed_a < fixed_b) ? fixed_b : fixed_a;
+	return max;
+}
+	
+

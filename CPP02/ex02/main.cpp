@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 02:56:38 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/07 03:00:39 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:02:32 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main( void ) {
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	//std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return (0);
 }
