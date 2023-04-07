@@ -6,13 +6,13 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:52:56 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/06 23:25:56 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/07 03:43:50 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int _int){
+Fixed::Fixed(int  _int){
 	std::cout << "Int Constructbor called" << std::endl;
 	this ->Fixed_p = _int << this->Fractional_bits; 
 }
@@ -22,16 +22,20 @@ Fixed::Fixed(){
 }
 
 
-Fixed::Fixed(const float _float){
+Fixed::Fixed(float _float){
 	std::cout << "Float Constructor called" << std::endl;
   	this->Fixed_p = roundf((float)(_float *  (1 << this->Fractional_bits)));
-	std::cout << this->Fixed_p << std::endl;
 }
 
-void Fixed::operator= (const Fixed &fixed){
+Fixed& Fixed::operator= (const Fixed &fixed){
 	this->Fixed_p = fixed.Fixed_p;
+	return *this;
 }
 
+Fixed::Fixed(const Fixed& other){
+	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
+}
 
 float Fixed::toFloat() const {
 	int factor = 1 << this->Fractional_bits;
