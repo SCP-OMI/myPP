@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:03:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/07 17:02:20 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/08 03:14:05 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 Fixed::Fixed(const int _int){
 	// std::cout << "Int Constructbor called" << std::endl;
-	this ->Fixed_p = _int << this->Fractional_bits; 
+	this ->Fixed_p = _int << this->Fractional_bits;
+	std::cout << this->Fixed_p << std::endl;
 }
 
 Fixed::Fixed(){
-	// std::cout << "Constructor has been called" << std::endl;
+	// std::cout << "Default Constructor has been called" << std::endl;
 	this->Fixed_p = 0;
 }
 
@@ -26,8 +27,8 @@ Fixed::Fixed(){
 Fixed::Fixed(const float _float){
 	// std::cout << "Float Constructor called" << std::endl;
   	this->Fixed_p = roundf((float)(_float *  (1 << this->Fractional_bits)));
-}
 
+}
 
 Fixed::Fixed(const Fixed& other){
 	// std::cout << "Copy constructor called" << std::endl;
@@ -52,7 +53,7 @@ int Fixed::toInt()const{
 
 
 Fixed::~Fixed(){
-	// std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 
