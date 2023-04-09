@@ -6,19 +6,22 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 01:08:36 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 02:14:40 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/09 07:01:22 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main (){
-	ClapTrap Clap("OMI");
+	ScavTrap Scav("Scav");
+	ClapTrap Clap("Clap");
 	
-	for (int i = 0; i < 9 ; i++){
+	for (int i = 0; i < 10 ; i++){
 		Clap.attack("MEHDI");
-		Clap.takeDamage(8);
-		Clap.beRepaired(1);}
-
-	
+		Scav.attack("MEHDI");
+		//Clap.takeDamage(1);
+		//Clap.beRepaired(1);
+		//Clap.guardGate();
+	}
 }

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 02:17:59 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 06:42:23 by mcharouh         ###   ########.fr       */
+/*   Created: 2023/04/09 01:08:36 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/04/09 07:49:12 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
 #include "ClapTrap.hpp"
-#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
-	public :
-		ScavTrap();
-		~ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& _ScavTrap);
-		ScavTrap & operator=(const ScavTrap & _ScavTrap);
-		void attack(const std::string& target);
-		void guardGate();
-};
-
-#endif
+int main (){
+	ScavTrap Scav("Scav");
+	ClapTrap Clap("Clap");
+	FragTrap Frag("Frag");
+	
+	for (int i = 0; i < 5 ; i++){
+		Frag.attack("MEHDI");
+		Scav.attack("MEHDI");
+		Clap.attack("MEHDI");
+		//Clap.beRepaired(1);
+		Frag.highFivesGuys();
+		//Frag();
+	}
+	
+}
