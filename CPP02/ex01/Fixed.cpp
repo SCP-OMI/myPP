@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:52:56 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/08 01:39:41 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/08 01:57:54 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ Fixed::Fixed(float _float){
 
 Fixed& Fixed::operator= (const Fixed &fixed){
 	std::cout << "Copy assignement called" << std::endl;
-	this->Fixed_p = fixed.Fixed_p;
+	if (this != &fixed)
+		this->Fixed_p = fixed.Fixed_p;
 	return *this;
 }
 

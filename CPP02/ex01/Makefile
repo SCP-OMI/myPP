@@ -1,6 +1,5 @@
 NAME = Fixed
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
-
 FILES = main.cpp Fixed.cpp
 OBJS = $(FILES:.cpp=.o)
 

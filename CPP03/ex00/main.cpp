@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 11:34:16 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/07 03:28:08 by mcharouh         ###   ########.fr       */
+/*   Created: 2023/04/09 01:08:36 by mcharouh          #+#    #+#             */
+/*   Updated: 2023/04/09 01:54:23 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main ()
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+int main (){
+	ClapTrap Clap("OMI");
+	for (int i = 0; i < 6; i++)
+	{
+		Clap.attack("MEHDI");
+		//Clap.beRepaired(1);
+	}
+	
 }

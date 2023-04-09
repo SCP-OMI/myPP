@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:03:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/08 03:14:05 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/09 01:35:25 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Fixed::Fixed(const int _int){
 	// std::cout << "Int Constructbor called" << std::endl;
 	this ->Fixed_p = _int << this->Fractional_bits;
-	std::cout << this->Fixed_p << std::endl;
+	//std::cout << this->Fixed_p << std::endl;
 }
 
 Fixed::Fixed(){
