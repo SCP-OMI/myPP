@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:15:35 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 07:49:57 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/09 07:54:23 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 FragTrap::FragTrap(){
 	std::cout << "Default FragTrap Constructor has been called" << std::endl;
+	this->C_name = "Default FragTrap name";
+	this->Hit_points = 100;
+	this->Energy_points = 50;
+	this->Attack_damage = 20;
 }
 FragTrap::~FragTrap(){
 	std::cout << "Default FragTrap Destructor has been called" << std::endl;

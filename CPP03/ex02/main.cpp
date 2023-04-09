@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 01:08:36 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 07:49:12 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/09 07:55:07 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main (){
 	ScavTrap Scav("Scav");
+	ScavTrap SCAAV;
 	ClapTrap Clap("Clap");
 	FragTrap Frag("Frag");
 	
@@ -25,7 +26,6 @@ int main (){
 		Clap.attack("MEHDI");
 		//Clap.beRepaired(1);
 		Frag.highFivesGuys();
-		//Frag();
-	}
+			}
 	
 }
