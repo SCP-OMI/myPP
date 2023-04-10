@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 05:46:35 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 06:53:02 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:44:33 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &_ScavTrap){
 }
 
 ScavTrap::ScavTrap(std::string name){
-	std::cout << "Copy ScavTrap Constructor has been called" << std::endl;
+	std::cout << "Parametrized ScavTrap Constructor has been called" << std::endl;
 	this->C_name = name;
 	this->Hit_points = 100;
 	this->Energy_points = 50;
@@ -42,6 +42,8 @@ ScavTrap::ScavTrap(std::string name){
 ScavTrap::ScavTrap(const ScavTrap &_ScavTrap){
 	*this = _ScavTrap;
 }
+
+/*Overloading methods / Special inherited class methods*/
 
 void ScavTrap::attack(const std::string &target){
 	if (this->Energy_points && this->Hit_points){

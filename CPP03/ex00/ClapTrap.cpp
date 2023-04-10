@@ -6,21 +6,21 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 00:57:37 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 02:06:28 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:14:08 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(){
-	std::cout << "Default Constructor has been called" << std::endl;
+	std::cout << "Default ClapTrap Constructor has been called" << std::endl;
 	this->Hit_points = 10;
 	this->Energy_points = 10;
 	this->Attack_damage = 1;
 }
 
 ClapTrap::ClapTrap(std::string name){
-	std::cout << "Constructor has been called" << std::endl;
+	std::cout << "Parametrized ClapTrap Constructor has been called" << std::endl;
 	this->C_name = name;
 	this->Hit_points = 10;
 	this->Energy_points = 10;
@@ -40,7 +40,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &_ClapTrap){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ClapTrap Destructor has been called" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){

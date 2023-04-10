@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:15:35 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 07:54:23 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:41:39 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ FragTrap::FragTrap(){
 	std::cout << "Default FragTrap Constructor has been called" << std::endl;
 	this->C_name = "Default FragTrap name";
 	this->Hit_points = 100;
-	this->Energy_points = 50;
-	this->Attack_damage = 20;
+	this->Energy_points = 30;
+	this->Attack_damage = 100;
 }
 FragTrap::~FragTrap(){
 	std::cout << "Default FragTrap Destructor has been called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name){
+	std::cout << "Parametrized FragTrap Destructor has been called" << std::endl;
 	this->C_name = name;
 	this->Hit_points = 100;
 	this->Attack_damage = 30;
 	this->Energy_points = 100;
-	
 }
 
 FragTrap &FragTrap::operator=(const FragTrap & _FragTrap){
@@ -41,9 +41,11 @@ FragTrap &FragTrap::operator=(const FragTrap & _FragTrap){
 }
 
 FragTrap::FragTrap(const FragTrap& _FragTrap){
-	std::cout << "Copy Constructor has been called" << std::endl;
+	std::cout << "Copy FragTrap Constructor has been called" << std::endl;
 	*this = _FragTrap;
 }
+
+/*Overloading methods / Special inherited class methods*/
 
 void FragTrap::attack(const std::string &target){
 	if (this->Energy_points && this->Hit_points){

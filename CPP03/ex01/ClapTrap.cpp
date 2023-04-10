@@ -6,28 +6,28 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 00:57:37 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/09 06:52:41 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:17:15 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(){
-	std::cout << "Default ScapTrap Constructor has been called" << std::endl;
+	std::cout << "Default ClapTrap Constructor has been called" << std::endl;
 	this->Hit_points = 10;
 	this->Energy_points = 10;
 	this->Attack_damage = 1;
 }
 
 ClapTrap::ClapTrap(std::string name){
-	std::cout << "Constructor ScapTrap has been called" << std::endl;
+	std::cout << "ClapTrap Constructor has been called" << std::endl;
 	this->C_name = name;
 	this->Hit_points = 10;
 	this->Energy_points = 10;
 	this->Attack_damage = 1;
 }
 ClapTrap::ClapTrap(const ClapTrap& Copy_Clap){
-	std::cout << "Copy ScapTrap Constructor has been called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor has been called" << std::endl;
 	*this = Copy_Clap;
 }
 
@@ -40,7 +40,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &_ClapTrap){
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor ScapTrap has been called" << std::endl;
+	std::cout << "ClapTrap Destructor has been called" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
