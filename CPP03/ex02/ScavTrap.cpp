@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 05:46:35 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/10 00:32:12 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:59:40 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ ScavTrap::ScavTrap(){
 	this->Energy_points = 50;
 	this->Attack_damage = 20;
 }
+
+ScavTrap::ScavTrap(std::string name){
+	std::cout << "Parametrized ScavTrap Constructor has been called" << std::endl;
+	this->C_name = name;
+	this->Hit_points = 100;
+	this->Energy_points = 50;
+	this->Attack_damage = 20;
+}
+
 ScavTrap::~ScavTrap(){
 	std::cout << "Default ScavTrap Destructor" << std::endl;
 }
@@ -29,14 +38,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &_ScavTrap){
 	this->Energy_points = _ScavTrap.Energy_points;
 	this->Attack_damage = _ScavTrap.Attack_damage;
 	return(*this);
-}
-
-ScavTrap::ScavTrap(std::string name){
-	std::cout << "Parametrized ScavTrap Constructor has been called" << std::endl;
-	this->C_name = name;
-	this->Hit_points = 100;
-	this->Energy_points = 50;
-	this->Attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &_ScavTrap){
