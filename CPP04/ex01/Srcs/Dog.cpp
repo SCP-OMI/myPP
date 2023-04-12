@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:46:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 08:26:09 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/12 00:49:54 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,15 @@ Dog::~Dog(){
 
 Dog& Dog::operator= (const Dog &_Dog){
 	this->type = _Dog.type;
-	delete this->_brain;
+	//delete this->_brain;
 	if (_Dog._brain){
 		this->_brain = new Brain();
 	}
-	else
-		this->_brain = NULL;
 	return *this;
 }
 
 Dog::Dog(const Dog &_Dog){
+	this->_brain = NULL;
 	*this = _Dog;
 }
 

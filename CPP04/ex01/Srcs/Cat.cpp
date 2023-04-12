@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:47:22 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 08:26:16 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/12 00:45:02 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ Cat::~Cat(){
 
 Cat& Cat::operator=(const Cat &_Cat){
 	this->type = _Cat.type;
-	delete this->_brain;
+	//delete this->_brain;
 	if (_Cat._brain){
 	 	this->_brain = new Brain();
 	}
-	else
-		this->_brain = NULL;
 	return *this;
 }
 
 Cat::Cat(const Cat &_Cat){
+	this->_brain = NULL;
 	*this = _Cat;
 }
 

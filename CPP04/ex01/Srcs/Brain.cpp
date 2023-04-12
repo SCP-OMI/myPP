@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 06:14:08 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 08:53:36 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/12 00:22:12 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Brain::Brain(){
 }
 
 Brain &Brain::operator= (const Brain& _brain){
-	for(int i = 0; i < 99; i++){
+	for(int i = 0; i < 100; i++){
 		this->ideas[i] = _brain.ideas[i];
 	}
 	return(*this);
