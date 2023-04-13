@@ -6,12 +6,15 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 07:17:53 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/12 07:20:45 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:01:09 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 #define IMATERIASOURCE_HPP
+
+# include "../Libs/AMateria.hpp"
+
 
 class IMateriaSource{
 	public:
