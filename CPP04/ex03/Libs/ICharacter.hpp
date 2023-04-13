@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 08:10:59 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/13 06:03:31 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:10:22 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 #define ICHARACTER_HPP
 
 #include "../Libs/AMateria.hpp"
+#include <iostream>
 
 class AMateria;
 
 class	ICharacter
 {
 	public:
-		virtual ~ICharacter() {}
+		virtual ~ICharacter() {};
 		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;

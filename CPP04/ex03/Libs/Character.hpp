@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 08:23:30 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/13 05:51:27 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:14:12 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class Character : public ICharacter {
 	private:
 		std::string	name;
-		AMateria*	inventory[4];
+		AMateria*	Player_Skill[4];
 	public:
 		Character();
 		Character(std::string const & name);
@@ -33,8 +33,8 @@ class Character : public ICharacter {
 
 		std::string const & getName() const;
 		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+		void unequip(int i);
+		void use(int i, ICharacter& target);
 };
 
 #endif

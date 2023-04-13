@@ -1,7 +1,7 @@
 NAME = Interface
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror -g -fsanitize=address
 
-FILES = Srcs/main.cpp Srcs/AMateria.cpp Srcs/Character.cpp Srcs/Cure.cpp Srcs/Ice.cpp Srcs/MaterialSource.cpp
+FILES = Srcs/main.cpp Srcs/AMateria.cpp Srcs/Character.cpp Srcs/Cure.cpp Srcs/Ice.cpp Srcs/MateriaSource.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)

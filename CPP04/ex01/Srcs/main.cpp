@@ -6,7 +6,7 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:22:21 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/12 00:47:48 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:53:01 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 
 int main () {
 	
-	Cat dog;
-	Cat ti(dog);
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;
+	delete i;
+
+	return 0;
    
 }

@@ -6,11 +6,11 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:05 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/13 05:49:43 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:10:53 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../Libs/AMateria.hpp"
 
 AMateria::AMateria(void) : type("default") {}
 

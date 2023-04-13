@@ -6,12 +6,12 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:47:22 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 01:24:50 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:25:35 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Animal.hpp"
+#include "../Libs/Cat.hpp"
+#include "../Libs/Animal.hpp"
 
 Cat::Cat(){
 	std::cout << "Default kitieeeeee has been called" << std::endl;
@@ -36,5 +36,5 @@ Cat::Cat(const Cat &_Cat){
 }
 
 void Cat::makeSound() const{
-	std::cout << "Cat go brrrr" << std::endl;
+	std::cout << "Cat goes Miaw" << std::endl;
 }

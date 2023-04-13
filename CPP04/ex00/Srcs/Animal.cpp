@@ -6,11 +6,11 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 00:52:32 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 01:35:24 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:25:25 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../Libs/Animal.hpp"
 
 Animal::Animal(){
 	std::cout << "Default Animal Constructor has been called" << std::endl;

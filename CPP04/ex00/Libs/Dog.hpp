@@ -6,11 +6,11 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:30:06 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 01:57:52 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:27:16 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../Libs/Animal.hpp"
 
 class Dog : public Animal{
 	public :

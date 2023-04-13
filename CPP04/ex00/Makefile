@@ -1,7 +1,7 @@
 NAME = Poly
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-FILES = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+FILES = Srcs/main.cpp Srcs/Dog.cpp Srcs/Cat.cpp Srcs/Animal.cpp Srcs/WrongAnimal.cpp Srcs/WrongCat.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)

@@ -6,11 +6,11 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:46:52 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 01:38:15 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:26:27 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../Libs/Dog.hpp"
 
 Dog::Dog(){
 	std::cout << "Default Doggieeeeee Constructor has been called" << std::endl;
@@ -35,5 +35,5 @@ Dog::Dog(const Dog &_Dog){
 }
 
 void Dog::makeSound() const{
-	std::cout << this->type << " go brrrr" << std::endl;
+	std::cout << this->type << " goes Haw" << std::endl;
 }

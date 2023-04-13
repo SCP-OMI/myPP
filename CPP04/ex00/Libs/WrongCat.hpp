@@ -6,13 +6,13 @@
 /*   By: mcharouh <mcharouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:59:45 by mcharouh          #+#    #+#             */
-/*   Updated: 2023/04/11 02:12:09 by mcharouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 06:27:08 by mcharouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
-#include "WrongAnimal.hpp"
+#include "../Libs/WrongAnimal.hpp"
 #include <iostream>
 
 class WrongCat : public WrongAnimal{
