@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:36:07 by OMI               #+#    #+#             */
-/*   Updated: 2023/05/15 17:36:07 by OMI              ###   ########.fr       */
+/*   Updated: 2023/05/15 21:47:30 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 int main(){
     Bureaucrat Bureaucrat("OMI");
 
-    Bureaucrat.Print_B(Bureaucrat);
-    Bureaucrat.GradeManip("POG");
-    Bureaucrat.Print_B(Bureaucrat);
+    for (int i = 0; i < 151 ; i++){
+        Bureaucrat.Print_B(Bureaucrat);
+        Bureaucrat.GradeManip("KEK");
+    }
 
     
 }

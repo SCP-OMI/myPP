@@ -6,7 +6,7 @@
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:27:37 by OMI               #+#    #+#             */
-/*   Updated: 2023/05/15 21:34:08 by OMI              ###   ########.fr       */
+/*   Updated: 2023/05/15 21:47:15 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,24 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
 }
 
 void Bureaucrat::GradeManip(std::string command) {
-    if (command == "POG") {
-        if (grade > 0) {
-            grade--;
-        } else {
-            throw GradeOutOfRangeException();
+    try {
+        if (command == "POG") {
+            if (grade > 0) {
+                grade--;
+            } else {
+                throw GradeOutOfRangeException();
+            }
+        } else if (command == "KEK") {
+            if (grade < 150) {
+                grade++;
+            } else {
+                throw GradeOutOfRangeException();
+            }
         }
-    } else if (command == "KEK") {
-        if (grade < 150) {
-            grade++;
-        } else {
-            throw GradeOutOfRangeException();
-        }
+    } catch (const GradeOutOfRangeException& e) {
+        // Handle the exception here
+        // For example, you can print an error message or take other appropriate actions
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 }
 
