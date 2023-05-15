@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucrats.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:27:37 by OMI               #+#    #+#             */
-/*   Updated: 2023/05/15 17:27:37 by OMI              ###   ########.fr       */
+/*   Updated: 2023/05/15 21:34:08 by OMI              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libs/Bureaucrats.hpp"
+#include "../Libs/Exceptions.hpp"
 
 Bureaucrat::Bureaucrat(){
     std::cout << "default constructor has been called" << std::endl;
@@ -49,11 +50,20 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     return os;
 }
 
-void Bureaucrat::GradeManip(std::string command){
-    if (command == "POG")
-        this->grade--;
-    else if (command == "KEK")
-        this->grade++;
+void Bureaucrat::GradeManip(std::string command) {
+    if (command == "POG") {
+        if (grade > 0) {
+            grade--;
+        } else {
+            throw GradeOutOfRangeException();
+        }
+    } else if (command == "KEK") {
+        if (grade < 150) {
+            grade++;
+        } else {
+            throw GradeOutOfRangeException();
+        }
+    }
 }
 
 void Bureaucrat::Print_B(const Bureaucrat &_Bureaucrat){
