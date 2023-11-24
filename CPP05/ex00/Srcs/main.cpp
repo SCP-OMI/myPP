@@ -1,24 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: OMI <mcharouh@student.1337.ma>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 17:36:07 by OMI               #+#    #+#             */
-/*   Updated: 2023/05/15 21:47:30 by OMI              ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "../Libs/Bureaucrat.hpp"
 
-#include "../Libs/Bureaucrats.hpp"
+int main (){
 
-int main(){
-    Bureaucrat Bureaucrat("OMI");
-
-    for (int i = 0; i < 151 ; i++){
-        Bureaucrat.Print_B(Bureaucrat);
-        Bureaucrat.GradeManip("KEK");
-    }
-
-    
+    Bureaucrat Steve;
+for (int i=0; i<150; i++){
+   try{
+    Steve.GradeUP();
+    std::cout << "Hi there, my name is " << Steve.GetName() << ", my grade is : " << Steve.GetGrade() << std::endl;
+    // std::cout << Steve.GetGrade() << std::endl;
+   }
+   catch (const std::underflow_error& e){
+    std::cerr << e.what() << std::endl;
+   }
+   catch (const std::overflow_error &e){
+    std::cerr << e.what() << std::endl;
+   }
+}
+    std::cout << "Your program didn't crash" << std::endl;
+   return 0;
 }
