@@ -1,6 +1,5 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
-
 #include <iostream>
 
 class Bureaucrat{
@@ -10,7 +9,7 @@ class Bureaucrat{
     public :
         Bureaucrat();
         ~Bureaucrat();
-        Bureaucrat(int grade); 
+        Bureaucrat(int grade);
         Bureaucrat(std::string name);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat &Bureaucrat);
@@ -23,5 +22,5 @@ class Bureaucrat{
         void GradeDOWN();
 
 };
-        std::ostream & operator<<(std::ostream &os, const Bureaucrat& Bureaucrat);
+    std::ostream & operator<<(std::ostream &os, const Bureaucrat& Bureaucrat);
 #endif

@@ -43,7 +43,7 @@ void Bureaucrat::GradeUP() {
         this->grade -= 1;
 }
 void Bureaucrat::GradeTooHighException(){
-    throw std::underflow_error("You're the prez!");
+    throw std::overflow_error("You're the prez!");
 }
 void Bureaucrat::GradeTooLowException(){
     throw std::underflow_error("You're fired!");
@@ -55,8 +55,8 @@ void Bureaucrat::GradeDOWN(){
 }
 
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat& bureaucrat) {
-    os << bureaucrat.GetName() << ", bureaucrat grade " << bureaucrat.GetGrade() << std::endl;
+std::ostream & operator<<(std::ostream &os, const Bureaucrat& Bureaucrat){
+    // std::ostream os;
+    os << Bureaucrat.GetName() << "bureaucrat grade" << Bureaucrat.GetGrade() << std::endl;
     return os;
 }
-

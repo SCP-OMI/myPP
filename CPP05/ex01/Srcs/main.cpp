@@ -1,15 +1,15 @@
 #include "../Libs/Bureaucrat.hpp"
+#include "../Libs/Form.hpp"
 
 int main (){
 
     Bureaucrat Steve("OMI", 10);
-    // std::cout << Steve << std::endl;
-    // std::cout << Steve.GetGrade() << std::endl;
-    // std::cout << Steve.GetName() << std::endl;
-for (int i=0; i<15; i++){
+    Form Form("Formi", 1);
+for (int i=0; i<150; i++){
    try{
+    Form.beSigned(Steve);
     Steve.GradeUP();
-    std::cout << Steve << std::endl;
+    std::cout << "Hi there, my name is " << Steve.GetName() << ", my grade is : " << Steve.GetGrade() << std::endl;
     // std::cout << Steve.GetGrade() << std::endl;
    }
    catch (const std::underflow_error& e){
