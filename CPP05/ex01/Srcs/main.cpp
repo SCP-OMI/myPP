@@ -5,10 +5,11 @@ int main (){
 
     Bureaucrat Steve("OMI", 10);
     Form Form("Formi", 1);
-for (int i=0; i<150; i++){
+for (int i=0; i<10; i++){
    try{
-    Form.beSigned(Steve);
+    std::cout << "req_Grade : " << Form.GetGrade() << " B_Grade : " << Steve.GetGrade() << std::endl;
     Steve.GradeUP();
+    Form.beSigned(Steve);
     std::cout << "Hi there, my name is " << Steve.GetName() << ", my grade is : " << Steve.GetGrade() << std::endl;
     // std::cout << Steve.GetGrade() << std::endl;
    }

@@ -1,6 +1,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
+#include "../Libs/Form.hpp"
+
+class Form;
 
 class Bureaucrat{
     private :
@@ -20,6 +23,7 @@ class Bureaucrat{
         int GetGrade()const;
         void GradeUP();
         void GradeDOWN();
+        void signForm(Form form);
 
 };
     std::ostream & operator<<(std::ostream &os, const Bureaucrat& Bureaucrat);

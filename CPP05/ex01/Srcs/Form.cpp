@@ -2,7 +2,7 @@
 
 
 Form::Form(){
-    std::cout << "Defaut" << std::endl;
+    std::cout << "Defaut Form constructor has been called" << std::endl;
 }
 Form::Form(const Form& form){
     *this = form;
@@ -15,7 +15,7 @@ Form::Form(std::string name, int req_Grade){
 }
 
 Form::~Form(){
-    std::cout << "Dest" << std::endl;
+    std::cout << "Form destructor has been called" << std::endl;
 }
 
 Form &Form::operator=(const Form &form){
@@ -35,8 +35,8 @@ int Form::GetGrade()const{return this->req_Grade;}
 
 
 void Form::beSigned(Bureaucrat Bureaucrat){
-    if (this->req_Grade <= Bureaucrat.GetGrade())
-        std::cout << "YEP" << std::endl;
+    if (this->req_Grade >= Bureaucrat.GetGrade())
+        this->is_signed = true;
     else
         GradeTooLowException();
 }

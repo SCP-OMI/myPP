@@ -54,6 +54,13 @@ void Bureaucrat::GradeDOWN(){
     this->grade += 1;
 }
 
+void Bureaucrat::signForm(Form form){
+    if(form.GetSign() == true)
+        std::cout << this->name << " signed " << form.GetName() << std::endl;
+    else
+        std::cout << this->name << " couldn't sign " << form.GetName() << " because " << std::endl;
+}
+
 
 std::ostream & operator<<(std::ostream &os, const Bureaucrat& Bureaucrat){
     // std::ostream os;
