@@ -22,7 +22,7 @@ class Form{
         int GetGrade()const;
         /*Form Methods*/
         void beSigned(Bureaucrat Bureaucrat);
-        void GradeTooLowException();
+        std::underflow_error GradeTooLowException();
         
 };
     std::ostream &operator<< (std::ostream &os, const Form& form);

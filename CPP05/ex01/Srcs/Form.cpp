@@ -2,7 +2,7 @@
 
 
 Form::Form(){
-    std::cout << "Defaut Form constructor has been called" << std::endl;
+    // std::cout << "Defaut Form constructor has been called" << std::endl;
 }
 Form::Form(const Form& form){
     *this = form;
@@ -15,7 +15,7 @@ Form::Form(std::string name, int req_Grade){
 }
 
 Form::~Form(){
-    std::cout << "Form destructor has been called" << std::endl;
+    // std::cout << "Form destructor has been called" << std::endl;
 }
 
 Form &Form::operator=(const Form &form){
@@ -25,8 +25,12 @@ Form &Form::operator=(const Form &form){
     return *this;
 }
 
-void Form::GradeTooLowException(){
-    throw std::underflow_error("This Form requires a higher Grade to be signed");
+std::underflow_error Form::GradeTooLowException(){
+    // std::string error = "Grade too low";
+    return std::underflow_error("This Form requires a higher Grade to be signed");
+
+    // throw std::string(Bureaucrat.GetName() + " couldn't sign " + this->GetName() + " because " + error);
+
 }
 
 std::string Form::GetName()const{return this->name;}
@@ -35,10 +39,15 @@ int Form::GetGrade()const{return this->req_Grade;}
 
 
 void Form::beSigned(Bureaucrat Bureaucrat){
+    // try {
+    std::cout << this->req_Grade << "---" << Bureaucrat.GetGrade() << std::endl;
     if (this->req_Grade >= Bureaucrat.GetGrade())
         this->is_signed = true;
     else
-        GradeTooLowException();
+        throw GradeTooLowException();
+    // catch (std::underflow_error &e){
+        
+    // }
 }
 
 std::ostream &operator<<(std::ostream &os, const Form& form){
