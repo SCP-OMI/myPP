@@ -37,10 +37,15 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &Bureaucrat){
 }
 
 void Bureaucrat::GradeUP() {
+    try {
     if (this->grade <= 1)
         GradeTooHighException();
     else
         this->grade -= 1;
+    }
+    catch (const std::overflow_error &e){
+        std::cout << "7ALA CHABA KHOYA 7BIBI : " << e.what() << std::endl;
+    }
 }
 void Bureaucrat::GradeTooHighException(){
     throw std::underflow_error("You're the prez!");
@@ -48,10 +53,17 @@ void Bureaucrat::GradeTooHighException(){
 void Bureaucrat::GradeTooLowException(){
     throw std::underflow_error("You're fired!");
 }
+
 void Bureaucrat::GradeDOWN(){
+    try{
     if (this->grade >= 150)
         GradeTooLowException();
-    this->grade += 1;
+    else
+        this->grade += 1;
+    }
+    catch (std::underflow_error &e){
+        std::cout << "7ALA CHABA KHOYA 7BIBI : " << e.what() << std::endl;
+    }
 }
 
 
