@@ -2,10 +2,12 @@
 #define SPAN_HPP
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
-class span{
+class span {
     private:
         std::vector<int> array;
+        unsigned int size;
 
     public:
         span();
@@ -14,9 +16,10 @@ class span{
         span(const span& _copySpan);
         span &operator=(const span& span);
 
-        void addNumber();
-        void shortestSpan();
-        void longestSpan();
+        void addNumber(int N);
+        void printNumber();
+        int shortestSpan();
+        int longestSpan();
 };
 
 #endif
