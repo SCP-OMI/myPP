@@ -95,7 +95,7 @@ bool BitcoinExchange::CheckRates(std::string& rate){
     // std::cout << "============CheckRates============" << std::endl;
     // int reate = static_cast<int>(rate[0]);
     // reate-= 48;
-    std::cout << rate << std::endl;
+    // std::cout << rate << std::endl;
     // rate += "\r";
     // if (rate.at(0) == '.' )
     //     std::cout << "does start with ." << std::endl;
@@ -111,7 +111,7 @@ bool BitcoinExchange::CheckRates(std::string& rate){
 //    std::cout << "element :" << rate.size() << std::endl;
 
 
-   std::cout << "=============================" << std::endl;
+//    std::cout << "=============================" << std::endl;
 
     if (rate.empty() || rate.find_first_not_of("0123456789.-\n\r") != std::string::npos
 	||  rate.at(0) == '.' || rate.find('.', rate.length() - 1) != std::string::npos){
