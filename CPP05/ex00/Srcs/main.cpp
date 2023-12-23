@@ -1,24 +1,28 @@
 #include "../Libs/Bureaucrat.hpp"
 
 int main (){
+    /*Error No 1*/
+    try {
+        Bureaucrat Steve("OMI", -2);}
+    catch (const std::exception& e){
+        std::cerr << e.what() << std::endl;
+    }
+    Bureaucrat SafeSteve("OMI", 2);
 
-    Bureaucrat Steve("OMI", 10);
-    // std::cout << Steve << std::endl;
-    // std::cout << Steve.GetGrade() << std::endl;
-    // std::cout << Steve.GetName() << std::endl;
-for (int i=0; i<15; i++){
-   try{
-    Steve.GradeUP();
-    std::cout << Steve << std::endl;
-    // std::cout << Steve.GetGrade() << std::endl;
-   }
-   catch (const std::underflow_error& e){
-    std::cerr << e.what() << std::endl;
-   }
-   catch (const std::overflow_error &e){
-    std::cerr << e.what() << std::endl;
-   }
-}
-    std::cout << "Your program didn't crash" << std::endl;
-   return 0;
-}
+    for (int i=0; i<15; i++){
+    try{
+        SafeSteve.GradeDOWN();
+        std::cout << SafeSteve << std::endl;
+        // std::cout << Steve.GetGrade() << std::endl;
+    }
+    catch (const std::exception& e){
+        std::cerr << e.what() << std::endl;
+    }
+    }
+        std::cout << "No Exceptions were thrown" << std::endl;
+    return 0;
+    }
+    
+        // std::cout << Steve << std::endl;
+        // std::cout << Steve.GetGrade() << std::endl;
+        // std::cout << Steve.GetName() << std::endl;
