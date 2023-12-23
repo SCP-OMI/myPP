@@ -23,6 +23,3 @@ int main (){
     return 0;
     }
     
-        // std::cout << Steve << std::endl;
-        // std::cout << Steve.GetGrade() << std::endl;
-        // std::cout << Steve.GetName() << std::endl;
