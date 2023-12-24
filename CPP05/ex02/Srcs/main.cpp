@@ -16,9 +16,9 @@ int main (int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	// try {
-	Bureaucrat hermano("Hermano", 1);
+	Bureaucrat hermano("Hermano", 150);
 
-	Bureaucrat ebil("Ebil", 1);
+	Bureaucrat ebil("Ebil", 150);
 	cout << endl;
 
 	cout << endl;
@@ -27,7 +27,7 @@ int main (int argc, char **argv)
 	RobotomyRequestForm rrf("Ebil");
 	cout << endl;
 
-	try {
+	// try {
 
 	ebil.executeForm(scf);
 	std::cout << "HI" << std::endl;
@@ -48,10 +48,10 @@ int main (int argc, char **argv)
 	
 
 	cout << endl;
-	}
-	catch (std::exception& e) {
-		cerr << e.what() << endl;
-	}
+	// }
+	// catch (std::exception& e) {
+	// 	cerr << e.what() << endl;
+	// }
 
 	try {
 		hermano.executeForm(scf);
