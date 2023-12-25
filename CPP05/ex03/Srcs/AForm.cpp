@@ -1,32 +1,33 @@
-#include "../Libs/Form.hpp"
+#include "../Libs/AForm.hpp"
 
 
-Form::Form(){
+AForm::AForm(){
     // std::cout << "Defaut Form constructor has been called" << std::endl;
 }
-Form::Form(const Form& form){
+AForm::AForm(const AForm& form){
     this->name = form.name;
     this->is_signed = false;
     this->Exec_grade = form.Exec_grade;
     this->Signing_grade = form.Signing_grade;
 }
 
-Form::Form(std::string name, int Signing_grade, int Exec_grade){
+AForm::AForm(std::string name, std::string target,  int Signing_grade, int Exec_grade){
     this->name = name;
+    this->target = target;
     this->is_signed = false;
     this->Exec_grade = Exec_grade;
     this->Signing_grade = Signing_grade;
     if (Signing_grade > 150 || Exec_grade > 150)
-        throw (Form::GradeTooLowException());
+        throw (AForm::GradeTooLowException());
     else if (Signing_grade < 1 || Exec_grade < 1)
-        throw (Form::GradeTooHightException());
+        throw (AForm::GradeTooHightException());
 }
 
-Form::~Form(){
-    // std::cout << "Form destructor has been called" << std::endl;
+AForm::~AForm(){
+    // std::cout << "AForm destructor has been called" << std::endl;
 }
 
-Form &Form::operator=(const Form &form){
+AForm &AForm::operator=(const AForm &form){
     this->name = form.name;
     this->is_signed = false;
     this->Exec_grade = form.Exec_grade;
@@ -35,21 +36,27 @@ Form &Form::operator=(const Form &form){
     return *this;
 }
 
-const char* Form::GradeTooHightException::what() const throw(){
+void AForm::execute(Bureaucrat const& executor) const {
+    this->executeClass(executor);
+}
+
+const char* AForm::GradeTooHightException::what() const throw(){
     return "7ala chaba khoya 7bibi : Grade too high";
 }
 
-const char* Form::GradeTooLowException::what() const throw(){
+const char* AForm::GradeTooLowException::what() const throw(){
     return "7ala chaba khoya 7bibi : Grade too low";
 }
 
-std::string Form::GetName()const{return this->name;}
-bool Form::GetBool()const{return this->is_signed;}
-int Form::GetSign()const{return this->Signing_grade;}
-int Form::GetExec()const{return this->Exec_grade;}
+std::string AForm::GetTarget()const{return this->target;}
+std::string AForm::GetName()const{return this->name;}
+bool AForm::GetBool()const{return this->is_signed;}
+int AForm::GetSign()const{return this->Signing_grade;}
+int AForm::GetExec()const{return this->Exec_grade;}
 
 
-void Form::beSigned(Bureaucrat Bureaucrat){
+
+void AForm::beSigned(Bureaucrat Bureaucrat){
     // try {
     // std::cout << this->req_Grade << "---" << Bureaucrat.GetGrade() << std::endl;
     if (this->Signing_grade >= Bureaucrat.GetGrade()){
@@ -63,8 +70,8 @@ void Form::beSigned(Bureaucrat Bureaucrat){
     // }
 }
 
-std::ostream &operator<<(std::ostream &os, const Form& form){
-    os << form.GetName() << ", " << form.GetBool() << ", " << form.GetSign() << "," << form.GetExec() << std::endl;
+std::ostream &operator<<(std::ostream &os, const AForm& form){
+    os << form.GetName() << ", " << form.GetBool() << ", " << form.GetSign() << form.GetExec() << std::endl;
     return os;
 }
 

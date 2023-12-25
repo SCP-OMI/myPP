@@ -30,7 +30,7 @@ void ShrubberyCreationForm::executeClass(Bureaucrat const& executor) const{
         throw Bureaucrat::GradeTooLowException();
         std::cout << "HI" << std::endl;}
     else if (this->GetBool() == false)
-        std::cerr << "Shrubbery form couldn't get executed by " << executor.GetName() << " Because it's a desert Retard! " << std::endl;
+        std::cerr << "Presidential form couldn't get executed by " << executor.GetName() << " Because of curruption " << std::endl;
     else{
         std::cout << "        ^        \n";
         std::cout << "       ^^^       \n";

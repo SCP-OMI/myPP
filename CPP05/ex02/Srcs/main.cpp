@@ -11,55 +11,54 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-int main (int argc, char **argv)
-{
-	(void)argc;
-	(void)argv;
+int main (){
 	// try {
-	Bureaucrat hermano("Hermano", 150);
+	Bureaucrat NotOMI("OMI", 150);
+	Bureaucrat OMI("Not OMI", 1);
 
-	Bureaucrat ebil("Ebil", 150);
-	cout << endl;
-
-	cout << endl;
-	ShrubberyCreationForm scf("Ebil");
-	PresidentialPardonForm ppf("Ebil");
-	RobotomyRequestForm rrf("Ebil");
-	cout << endl;
-
-	// try {
-
-	ebil.executeForm(scf);
-	std::cout << "HI" << std::endl;
-	scf.beSigned(ebil);
-	ebil.executeForm(scf);
-
-	cout << endl;
-
-	ebil.executeForm(ppf);
-	ppf.beSigned(ebil);
-	ebil.executeForm(ppf);
-
-	cout << endl;
-
-	ebil.executeForm(rrf);
-	rrf.beSigned(ebil);
-	ebil.executeForm(rrf);
+	ShrubberyCreationForm Tree("OMI");
+	PresidentialPardonForm Prez("OMI");
+	RobotomyRequestForm Robot("OMI");
 	
+	std::cout << "===========Starting the <Tree> routine============\n" << std::endl;
 
-	cout << endl;
-	// }
-	// catch (std::exception& e) {
-	// 	cerr << e.what() << endl;
-	// }
+	std::cout << "Should not Execute => : "; 
+	OMI.executeForm(Tree);
+	Tree.beSigned(OMI);
+	std::cout << "Form Got signed by OMI" << std::endl;
+	std::cout << "Should Execute => : \n";
+	OMI.executeForm(Tree);
+	std::cout << std::endl;
 
+	std::cout << "===========Starting the <Prez> routine============\n" << std::endl;
+
+
+	std::cout << "Should not Execute => : "; 
+	OMI.executeForm(Prez);
+	Prez.beSigned(OMI);
+	std::cout << "Form Got signed by OMI" << std::endl;
+	std::cout << "Should Execute => : ";
+	OMI.executeForm(Prez);
+	std::cout << std::endl;
+
+
+	std::cout << "===========Starting the <Robotomy> routine============\n" << std::endl;
+
+	std::cout << "Should not Execute => : "; 
+	OMI.executeForm(Robot);
+	Robot.beSigned(OMI);
+	std::cout << "Form Got signed by OMI" << std::endl;
+	std::cout << "Should Execute => : ";
+	OMI.executeForm(Robot);
+	std::cout << std::endl;
+	std::cout << "===========Starting the catching routine============\n" << std::endl;
+
+	
+	std::cout << "===========Starting the <False Tree> routine============\n" << std::endl;
 	try {
-		hermano.executeForm(scf);
+		NotOMI.executeForm(Tree);
 	}
 	catch (std::exception& e) {
-		cerr << e.what() << endl;
+		std::cout << e.what() << endl;
 	}
-
-	cout << endl;
-	return EXIT_SUCCESS;
 }

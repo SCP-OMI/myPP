@@ -11,7 +11,7 @@ int main (){
 
     for (int i=0; i<15; i++){
     try{
-        SafeSteve.GradeDOWN();
+        SafeSteve.GradeUP();
         std::cout << SafeSteve << std::endl;
         // std::cout << Steve.GetGrade() << std::endl;
     }
@@ -19,7 +19,7 @@ int main (){
         std::cerr << e.what() << std::endl;
     }
     }
-        std::cout << "No Exceptions were thrown" << std::endl;
+        std::cout << "No Exceptions were unhandled" << std::endl;
     return 0;
     }
     

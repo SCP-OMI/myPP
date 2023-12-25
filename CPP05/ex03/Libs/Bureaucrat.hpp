@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <exception>
+#include "../Libs/AForm.hpp"
 
+class AForm;
 
 class Bureaucrat {
     private :
@@ -37,6 +39,7 @@ class Bureaucrat {
 
         /*New function*/
         void signForm(std::string name, bool is_signed);
+        void executeForm(AForm const& form);
 
 
 };

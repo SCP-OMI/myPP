@@ -3,31 +3,40 @@
 
 #include "../Libs/Bureaucrat.hpp"
 #include<iostream>
+#include <stdlib.h>
+#include <ctime>
+
+#define LOWEST_GRADE 1
+#define HIGHEST_GRADE 150
 
 class Bureaucrat;
 
-class Form{
+class AForm{
     private:
+        std::string target;
         std::string name;
         bool is_signed;
         int   Signing_grade;
-        int   Exec_grade; 
+        int   Exec_grade;
 
     public :
-        Form();
-        ~Form();
-        Form(const Form& form);
-        Form(std::string name, int Signing_grade, int Exec_grade);
-        Form &operator=(const Form &form);
+        AForm();
+        virtual ~AForm();
+        AForm(const AForm& form);
+        AForm(std::string name, std::string target, int Signing_grade, int Exec_grade);
+        AForm &operator=(const AForm &form);
 
         /*Getters*/
         std::string GetName()const;
+        std::string GetTarget()const;
         bool GetBool()const;
         int GetSign()const;
         int GetExec()const;
 
         /*Form Methods*/
         void beSigned(Bureaucrat Bureaucrat);
+        void execute(Bureaucrat const& executor) const;
+        virtual void executeClass(Bureaucrat const& executor) const = 0;
 
 
         class GradeTooLowException : public std::exception{
@@ -40,5 +49,5 @@ class Form{
         };
         
 };
-    std::ostream &operator<< (std::ostream &os, const Form& form);
+    std::ostream &operator<< (std::ostream &os, const AForm& form);
 #endif

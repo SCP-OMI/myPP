@@ -10,7 +10,6 @@ Bureaucrat::~Bureaucrat(){
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade){
-    
     if (grade < 0)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
@@ -67,7 +66,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw(){
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw(){
-    return "Grade too low";
+    return "Grade too loww";
 }
 
 
@@ -76,3 +75,13 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat& bureaucrat) {
     return os;
 }
 
+void Bureaucrat::signForm(std::string name, bool is_signed){
+    if (is_signed == true)
+        std::cout << this->GetName() << " signed " << name << std::endl;
+    else
+        std::cout << this->GetName() << " couldn't sign " << name << " because throwing here isn't a smart idea." << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const& form){
+    form.execute(*this);
+}

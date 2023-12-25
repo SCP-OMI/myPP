@@ -28,7 +28,7 @@ void RobotomyRequestForm::executeClass(Bureaucrat const& executor) const{
     if (executor.GetGrade() > this->GetExec())
         throw Bureaucrat::GradeTooLowException();
     else if (this->GetBool() == false)
-        std::cerr << "Rotbotomy form couldn't get executed by " << executor.GetName() << " You're underage young lady! (This joke would make sense 50% of the time) " << std::endl;
+        std::cerr << "Presidential form couldn't get executed by " << executor.GetName() << " Because of curruption " << std::endl;
     else{
         std::srand(std::time(NULL));
         if (random() % 2 == 0)
