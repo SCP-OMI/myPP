@@ -12,10 +12,10 @@
 class Bureaucrat;
 
 class AForm{
-    private:
+    protected:
         std::string target;
         std::string name;
-        bool is_signed;
+        bool  is_signed;
         int   Signing_grade;
         int   Exec_grade;
 

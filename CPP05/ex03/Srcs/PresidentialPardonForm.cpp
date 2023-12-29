@@ -17,11 +17,11 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& cop
     *this = copy;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& Pardon){
-    // this->name = Pardon.name;
-    // this->target = Pardon.target;
-    // this->Signing_grade = Pardon.Signing_grade;
-    // this->Exec_grade = Pardon.Exec_grade;
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& Pardon) {
+    this->name = Pardon.name;
+    this->target = Pardon.target;
+    this->Signing_grade = Pardon.Signing_grade;
+    this->Exec_grade = Pardon.Exec_grade;
     return *this;
 }
 

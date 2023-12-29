@@ -16,6 +16,7 @@ Intern::Intern(const Intern& copy){
 }
 
 Intern& Intern::operator=(const Intern& intern){
+    *this = intern;
     return *this;
 }
 

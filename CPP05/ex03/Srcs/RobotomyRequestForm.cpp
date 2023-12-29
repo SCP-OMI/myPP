@@ -17,10 +17,10 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy): AForm
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& jjk){
-    // this->name = jjk.name;
-    // this->target = jjk.target;
-    // this->Signing_grade = jjk.Signing_grade;
-    // this->Exec_grade = jjk.Exec_grade;
+    this->name = jjk.name;
+    this->target = jjk.target;
+    this->Signing_grade = jjk.Signing_grade;
+    this->Exec_grade = jjk.Exec_grade;
     return *this;
 }
 

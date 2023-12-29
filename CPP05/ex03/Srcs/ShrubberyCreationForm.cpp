@@ -18,10 +18,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) 
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& jjk){
-    // this->name = jjk.name;
-    // this->target = jjk.target;
-    // this->Signing_grade = jjk.Signing_grade;
-    // this->Exec_grade = jjk.Exec_grade;
+    this->name = jjk.name;
+    this->target = jjk.target;
+    this->Signing_grade = jjk.Signing_grade;
+    this->Exec_grade = jjk.Exec_grade;
     return *this;
 }
 

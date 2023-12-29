@@ -21,6 +21,8 @@ int main(){
 
 	InterNOMI.makeForm("HA", "OMI");
 
-	delete Prez,Tree,Robot;
+	delete Prez;
+	delete Tree;
+	delete Robot;
 
 }
