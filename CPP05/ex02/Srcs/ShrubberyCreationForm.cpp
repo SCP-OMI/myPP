@@ -3,25 +3,14 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(){}
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", target, 145, 137){
-    // this->name = "ShrubberyCreationForm";
-    // this->target = target;
-    // this->Signing_grade = 145;
-    // this->Exec_grade = 137;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) : AForm(copy.GetName(), copy.GetTarget(), copy.GetSign(), copy.GetExec()){
-    // this->name = copy.GetName();
-    // this->target = copy.GetTarget();
-    // this->Signing_grade = copy.GetSign();
-    // this->Exec_grade = copy.GetExec();
     *this = copy;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& jjk){
-    // this->name = jjk.name;
-    // this->target = jjk.target;
-    // this->Signing_grade = jjk.Signing_grade;
-    // this->Exec_grade = jjk.Exec_grade;
+    (void) jjk;
     return *this;
 }
 

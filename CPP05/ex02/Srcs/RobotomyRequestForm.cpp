@@ -2,25 +2,16 @@
 
 RobotomyRequestForm::RobotomyRequestForm(){}
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", target, 72, 45){
-    // this->name = "RobotomyRequestForm";
-    // this->target = target;
-    // this->Signing_grade = 72;
-    // this->Exec_grade = 45;
+
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy): AForm(copy.GetName(), copy.GetTarget(), copy.GetSign(), copy.GetExec()){
-    // this->name = copy.GetName();
-    // this->target = copy.GetTarget();
-    // this->Signing_grade = copy.GetSign();
-    // this->Exec_grade = copy.GetExec();
+
     *this = copy;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& jjk){
-    // this->name = jjk.name;
-    // this->target = jjk.target;
-    // this->Signing_grade = jjk.Signing_grade;
-    // this->Exec_grade = jjk.Exec_grade;
+    (void) jjk;
     return *this;
 }
 

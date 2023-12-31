@@ -3,25 +3,14 @@
 
 PresidentialPardonForm::PresidentialPardonForm(){}
 PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("PresidentialPardonForm", target, 25, 5){
-    // this->name = "PresidentialPardonForm";
-    // this->target = target;
-    // this->Signing_grade = 25;
-    // this->Exec_grade = 5;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy): AForm(copy.GetName(), copy.GetTarget(), copy.GetSign(), copy.GetExec()){
-    // this->name = copy.GetName();
-    // this->target = copy.GetTarget();
-    // this->Signing_grade = copy.GetSign();
-    // this->Exec_grade = copy.GetExec();
     *this = copy;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& Pardon){
-    // this->name = Pardon.name;
-    // this->target = Pardon.target;
-    // this->Signing_grade = Pardon.Signing_grade;
-    // this->Exec_grade = Pardon.Exec_grade;
+    (void) Pardon;
     return *this;
 }
 
