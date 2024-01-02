@@ -18,6 +18,7 @@ ScalarConverter::~ScalarConverter(){
 }
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter& SC){
+    (void) SC;
     return *this;
 }
 

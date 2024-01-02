@@ -8,5 +8,5 @@ int main (){
     identify(*a);
     identify(a);
 
-    
+    delete a;
 }

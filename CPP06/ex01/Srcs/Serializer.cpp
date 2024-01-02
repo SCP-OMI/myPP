@@ -13,6 +13,7 @@ serializer::serializer(const serializer& Copy){
 }
 
 serializer &serializer::operator=(const serializer& Ser){
+    (void) Ser;
     return *this;
 }
 
