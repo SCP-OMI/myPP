@@ -2,10 +2,11 @@
 #define ITER_HPP
 #include <iostream>
 
-template<class T>
-void iter(T *add, size_t len, void(*fct)(T&)){
-    for (int i = 0; i < len; i++){
-        fct(add[i]);
+template<class T, class T2>
+
+void iter(T *arr, size_t len, void(*fct)( T2&)){
+    for (size_t i = 0; i < len; i++){
+        fct(arr[i]);
     }
 }
 
@@ -20,12 +21,14 @@ void _Icout(T &input){
 
 template<class T>
 void to_string(T &N){
-   static_cast<char>(N + '0');
+    char string = static_cast<char>(N + '0');
+    (void) string;
 }
 
 template<class T>
 void to_int(T &N){
-    static_cast<int>(N);
+    int num = static_cast<int>(N);
+    (void) num;
 }
 
 

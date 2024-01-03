@@ -10,7 +10,7 @@ void swap(T &a, T& b){
     a = b;
     b = temp;
 }
-
+ 
 template<class T>
 T min(T val_A, T val_B){
     if (val_A > val_B || val_A == val_B)
@@ -26,9 +26,6 @@ T max(T val_A, T val_B){
     else
         return val_A;
 }
-
-
-
 
 
 #endif

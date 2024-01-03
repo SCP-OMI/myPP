@@ -1,5 +1,6 @@
 #include "../Libs/Whatever.hpp"
 
+// int N1 = 0;
 int main (){
     int N1 = 1;
     int N2 = 2;
@@ -14,7 +15,7 @@ int main (){
     std::cout << ::max(N1, N2) << std::endl;
 
     std::cout << "Old S1 : " << S1 << " Old S2 : " << S2 << std::endl;
-    ::swap(S1, S2);
+    ::swap<std::string>(S1, S2);
     std::cout << "New S1 : " << S1 << " New S2 : " << S2 << std::endl;
     std::cout << ::min(S1, S2) << std::endl;
     std::cout << ::max(S1, S2) << std::endl;

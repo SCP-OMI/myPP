@@ -13,6 +13,7 @@ class Array{
         Array();
         Array(unsigned int n);
         Array(const Array& _arr);
+        Array(Array& _arr);
         Array& operator =(const Array& _arr);
         T& operator[](int n);
         int size();
@@ -39,6 +40,10 @@ Array<T>::Array(unsigned int n): arr(new T[n]()), arr_size(n){
 
 template <class T>
 Array<T>::Array(const Array& _arr) : arr(new T[_arr.size()]), arr_size(_arr.arr_size){
+    *this = _arr;
+}
+template <class T>
+Array<T>::Array(Array& _arr) : arr(new T[_arr.size()]), arr_size(_arr.arr_size){
     *this = _arr;
 }
 
@@ -72,10 +77,6 @@ template <class T>
 Array<T>::~Array(){
     std::cout << "destructor has been called" << std::endl;
 }
-
-
-
-
 
 
 #endif
