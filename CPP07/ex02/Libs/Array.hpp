@@ -23,19 +23,16 @@ class Array{
 class _exception : public std::exception {
 public:
     virtual const char* what() const throw();
-    virtual ~_exception()throw();
 };
-
-_exception::~_exception() throw() {}
 
 template <class T>
 Array<T>::Array(): arr(new T[0]()), arr_size(0){
-    std::cout << "Default Constructor has been called" << std::endl;
+    // std::cout << "Default Constructor has been called" << std::endl;
 }
 
 template <class T>
 Array<T>::Array(unsigned int n): arr(new T[n]()), arr_size(n){
-    std::cout << "Parametrised Constructor has been called" << std::endl;
+    // std::cout << "Parametrised Constructor has been called" << std::endl;
 }
 
 template <class T>
@@ -60,7 +57,7 @@ Array<T> &Array<T>::operator=(const Array& _arr){
 
 template <class T>
 T& Array<T>::operator[](int n){
-    if (n >= this->arr_size)
+    if (n >= this->arr_size || n < 0)
         throw _exception();
     return(this->arr[n]);
 }
@@ -75,7 +72,7 @@ const char* _exception::what() const throw() {
 }
 template <class T>
 Array<T>::~Array(){
-    std::cout << "destructor has been called" << std::endl;
+    // std::cout << "destructor has been called" << std::endl;
 }
 
 

@@ -2,9 +2,15 @@
 #define ITER_HPP
 #include <iostream>
 
-template<class T, class T2>
+template<class T>
+void iter(T *arr, size_t len, void(*fct)(T&)){
+    for (size_t i = 0; i < len; i++){
+        fct(arr[i]);
+    }
+}
 
-void iter(T *arr, size_t len, void(*fct)( T2&)){
+template<class T>
+void iter(T *arr, size_t len, void(*fct)(const T&)){
     for (size_t i = 0; i < len; i++){
         fct(arr[i]);
     }
