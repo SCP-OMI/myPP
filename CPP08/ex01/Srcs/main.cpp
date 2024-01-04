@@ -6,14 +6,14 @@ int main(){
     unsigned int size = 5;
     span span(size);
     try {
-        srand(time(0));
+        srand(time(NULL));
         int number = rand();
         // for (unsigned int i = 0; i < size; i++){
-            span.addNumber(6);
-            span.addNumber(3);
-            span.addNumber(17);
-            span.addNumber(9);
-            span.addNumber(11);
+            span.addNumber(number/1);
+            span.addNumber(number/2);
+            span.addNumber(number/3);
+            span.addNumber(number/4);
+            span.addNumber(number/5);
     // }
     }
     catch (const char *error){

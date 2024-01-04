@@ -1,5 +1,5 @@
 NAME = Vector
-CFLAGS = c++ -std=c++98
+CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
 FILES = Srcs/main.cpp Srcs/Span.cpp
 
