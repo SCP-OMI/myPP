@@ -9,6 +9,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& _copy){
 }
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& btc){
+    (void) btc;
     return *this;
 }
 

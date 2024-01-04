@@ -9,6 +9,7 @@ void error_print(std::string error){
     std::cerr << "7ala chaba khoya 7bibi : " << error << std::endl;
 }
 RPN& RPN::operator=(const RPN& RPN){
+    (void)RPN;
     return *this;
 }
 RPN::~RPN(){
@@ -30,7 +31,7 @@ op = false;
 counter = 0;
 // while (){
     // int counter = 0;
-    for(int i = 0; i < _RPN.size(); i++){
+    for(unsigned int i = 0; i < _RPN.size(); i++){
         if (std::isdigit(this->_RPN[i]) && counter != 2){
             // std::cout << "-----" << std::endl;
             int num = static_cast<int>(this->_RPN[i]) - CALLIBRE;          

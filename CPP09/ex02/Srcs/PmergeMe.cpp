@@ -187,6 +187,7 @@ PmergeMe::PmergeMe(const PmergeMe& _copy){
 }
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& merge){
+    (void) merge;
     return *this;
 }
 
