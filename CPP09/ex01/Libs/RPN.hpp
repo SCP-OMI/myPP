@@ -17,6 +17,7 @@ class RPN{
     public  :
         RPN();
         RPN(std::string RPN);
+
         RPN(const RPN& copy);
         RPN& operator=(const RPN& RPN);
         ~RPN();

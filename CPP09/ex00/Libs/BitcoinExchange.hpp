@@ -30,4 +30,5 @@ class BitcoinExchange{
 
 
 
+
 #endif

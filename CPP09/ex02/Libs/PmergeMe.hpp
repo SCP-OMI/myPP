@@ -20,6 +20,7 @@ class PmergeMe{
         PmergeMe& operator=(const PmergeMe& merge);
 
         /* Vector Sorting */
+    
         void VectorSort(int ac, char **av);
         std::vector<unsigned int> VectorInsert(std::vector<unsigned int> _vec);
         std::vector<unsigned int> VectorMerge(std::vector<unsigned int> left, std::vector<unsigned int> right);
