@@ -4,6 +4,7 @@
 #include <stack>
 #include <cctype>
 #include <algorithm>
+#include <sstream>
 
 #define CALLIBRE 48
 class RPN{
@@ -20,8 +21,8 @@ class RPN{
         RPN& operator=(const RPN& RPN);
         ~RPN();
 
-        void routine();
-        void operation();
+        int routine();
+        int intConvert(std::string& _num);
 };
     void error_print(std::string error);
 #endif

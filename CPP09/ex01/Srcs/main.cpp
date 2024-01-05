@@ -8,7 +8,9 @@ int main(int ac, char **av){
         // std::cout << input << std::endl;
         // check()
         RPN sad_RPN(input);
-        sad_RPN.routine();
+        std::cout << sad_RPN.routine() << std::endl;
     }
+    else
+        error_print("Usage : ./RPN args");
 
 }

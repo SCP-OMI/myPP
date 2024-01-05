@@ -17,87 +17,54 @@ RPN::~RPN(){
 
 RPN::RPN(std::string RPN){
     this->_RPN = RPN;
-    if (this->_RPN.find_first_not_of("0987654321+*/- ") != std::string::npos)
+    if (this->_RPN.find_first_not_of("0123456789+*/- ") == std::string::npos)
     error_print("WRONG!");
 // std::stack<int>::iterator it = this->stack.begin();
-    this->_RPN.erase(std::remove(this->_RPN.begin(), this->_RPN.end(), ' '), this->_RPN.end());
+    // this->_RPN.erase(std::remove(this->_RPN.begin(), this->_RPN.end(), ' '), this->_RPN.end());
+    // std::cout << "---------STRING---------" << std::endl;
     // std::cout << this->_RPN << std::endl;
-    // std::cout << this->_RPN.size() << std::endl;
+}
+
+int RPN::intConvert(std::string& _num){
+    int num;
+    std::stringstream iss(_num);
+    iss >> num;
+    return num;
+}
+
+int RPN::routine(){
+    int left;
+    int right;
+    int result;
+    std::stringstream iss(this->_RPN);
+    std::stack<int> temp;
+    std::string string;
+
+    while(iss >> string){
+        if (string == "+" || string == "-" || string == "/" || string == "*"){
+            if (temp.size() < 2)
+                error_print("not enough elements in the stack.");
+            right = temp.top();
+            temp.pop();
+            left = temp.top();
+            temp.pop();
+            switch(string.at(0)){
+                case '+' : result = left + right; break;
+                case '*' : result = left * right; break;
+                case '-' : result = left - right; break;
+                case '/' :
+                    if (right != 0)
+                        result = left / right;
+                    else
+                        error_print("Can't devide by zero.");
+                break;
+            }
+            temp.push(result);
+        }
+        else
+            temp.push(intConvert(string));
+    }
+    return temp.top();
 
 }
 
-void RPN::routine(){
-op = false;
-counter = 0;
-// while (){
-    // int counter = 0;
-    for(unsigned int i = 0; i < _RPN.size(); i++){
-        if (std::isdigit(this->_RPN[i]) && counter != 2){
-            // std::cout << "-----" << std::endl;
-            int num = static_cast<int>(this->_RPN[i]) - CALLIBRE;          
-            if(op == false)
-                this->stack.push(num);
-            counter++;
-        }
-        else if (!std::isdigit(this->_RPN[i])){
-            this->_operator = this->_RPN[i];
-            operation();
-        }
-    }
-    std::cout << stack.top() << std::endl;
-// }
-}
-
-void RPN::operation(){
-    op = true;
-    std::cout << "size : " << stack.size() << std::endl;
-    // int left, right;
-    if (this->stack.size() < 2){
-        // std::cout << "stack small" << std::endl;
-        return;
-    }
-    else{
-        if (this->_operator == "+"){
-            int left = stack.top();
-            std::cout << "a : " << left << std::endl;
-            stack.pop();
-            int right = stack.top();
-            std::cout << "b : " << right << std::endl;
-            stack.pop();
-            int val = left + right;
-            this->stack.push(val);
-            // counter--;
-        }
-        if (this->_operator == "-"){
-            int left = stack.top();
-            std::cout << "a : " << left << std::endl;
-            stack.pop();
-            int right = stack.top();
-            std::cout << "b : " << right << std::endl;
-            stack.pop();
-            int val = left - right;
-            this->stack.push(val);
-            // counter--;
-        }
-        if (this->_operator == "*"){
-            int left = stack.top();
-            std::cout << "a : " << left << std::endl;
-            stack.pop();
-            int right = stack.top();
-            std::cout << "b : " << right << std::endl;
-            stack.pop();
-            int val = left * right;
-            this->stack.push(val);
-            // counter--;
-        } 
-        if (this->_operator == "/"){
-            int left = stack.top();
-            stack.pop();
-            int right = stack.top();
-            stack.pop();
-            int val = left / right;
-            stack.push(val);
-            // counter--;
-        }
-    }
-}
